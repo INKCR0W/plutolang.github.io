@@ -1,8 +1,8 @@
 {
-    "label": "For Integrators",
+    "label": "对于集成开发者",
     "position": 9,
     "link": {
       "type": "generated-index",
-      "description": "Concerns and bonus features for developers looking to integrate Pluto."
+      "description": "对于希望集成 Pluto 的开发者来说，有一些关照和附加功能。"
     }
   }
