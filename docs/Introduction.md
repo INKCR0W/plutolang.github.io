@@ -2,7 +2,7 @@
 sidebar_position: 0
 ---
 
-# What is Pluto?
-Pluto is a superset of Lua 5.4 designed for general-purpose programming. While being remarkably compatible with Lua 5.4 source-code & bytecode, it enhances the standard library & adds more than a dozen highly-desired syntaxes such as switch statements, compound operators, classes, class inheritance, string interpolation, type hinting, enums, and so on.
+# 什么是 Pluto？
+Pluto 是 Lua 5.4 的超集，专为通用编程而设计。尽管在源代码和字节码方面与 Lua 5.4 高度兼容，但它增强了标准库，并添加了十多种非常受欢迎的语法功能，如 switch 语句、复合运算符、类、类继承、字符串内插、类型提示、枚举等等。
 
-Pluto retains the easy embeddability of Lua, while offering a much improved developer experience.
+Pluto 保留了 Lua 的易于嵌入性，同时提供了更出色的开发者体验。

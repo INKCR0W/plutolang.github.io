@@ -3,38 +3,38 @@ sidebar_position: 3
 title: Beginner's Guide
 ---
 
-This article is for people completely unfamiliar with Lua who want to jump right into Pluto.
+这篇文章适用于那些对 Lua 完全不熟悉但想立刻开始学习 Pluto 的人。
 
-For people already familiar with Lua, the rest of this documentation should be a good introduction to Pluto.
+对于已经熟悉 Lua 的人来说，本文档的其余部分应该是 Pluto 的很好介绍。
 
-## Your first program
+## 你的第一个程序
 
-Let's start simple by saying hello to the world.
+让我们从简单的 “Hello, world!” 开始。
 
 ```pluto
 print("Hello, world!")
 ```
-#### [Try It Yourself](https://webshell.dev/#code=print(%22Hello%2C%20world!%22)&ext=pluto&run=pluto)
+#### [自己尝试一下](https://webshell.dev/#code=print(%22Hello%2C%20world!%22)&ext=pluto&run=pluto)
 
-Participation using the "try it yourself" links is recommended. Also feel free to modify the code and use the terminal to run it again (Arrow Key Up + Enter).
+建议使用 "自己尝试一下" 链接进行尝试。同时，你可以随意修改代码并使用终端重新运行它（上箭头键 + 回车键）。
 
-As you can see, this program prints "Hello, world!", and it does so by calling the builtin `print` function from Lua.
+正如你所看到的，这个程序打印 "Hello, world!"，它通过调用 Lua 的内置 `print` 函数来实现。
 
-## Simple arithmetic
+## 简单的计算
 
-Of course, we want more than a glorified text file, so let's get a bit more programmatic with some arithmetics.
+当然，我们希望的不仅仅是输出一个文本，所以让我们通过一些算术运算来变得更加编程化。
 
 ```pluto
 print($"2 + 2 is {2 + 2}")
 ```
 
-Notice the `$` before the string; this allows us to use curly brackets to embed expressions directly into the string. In this case, we embed the expression `2 + 2`, which evaluates to 4.
+请注意字符串前面的 `$`；这允许我们使用大括号将表达式直接嵌入到字符串中。在这种情况下，我们嵌入了表达式 `2 + 2`，它的值是 4。
 
-#### [Try It Yourself](https://webshell.dev/#code=print(%24%222%20%2B%202%20is%20%7B2%20%2B%202%7D%22)&ext=pluto&run=pluto)
+#### [自己尝试一下](https://webshell.dev/#code=print(%24%222%20%2B%202%20is%20%7B2%20%2B%202%7D%22)&ext=pluto&run=pluto)
 
-## Variables
+## 变量
 
-Variables in Lua/Pluto are global by default and are assigned trivially:
+在 Lua/Pluto 中，默认情况下变量是全局的，可以简单地分配：
 
 ```pluto
 a = 2
@@ -43,13 +43,13 @@ a += 2
 print($"I added 2 and now it's {a}")
 ```
 
-Notice how we still have a `$` before the strings but this time we're embedding the expression `a` which simply evaluates to the value of `a` at that particular moment.
+请注意，字符串前面仍然有 `$`，但这次我们嵌入了表达式 `a`，它在这里访问了 `a` 的值。
 
-#### [Try It Yourself](https://webshell.dev/#code=a%20%3D%202%0D%0Aprint(%24%22a%20is%20%7Ba%7D%22)%0D%0Aa%20%2B%3D%202%0D%0Aprint(%24%22I%20added%202%20and%20now%20it's%20%7Ba%7D%22)&ext=pluto&run=pluto)
+#### [自己尝试一下](https://webshell.dev/#code=a%20%3D%202%0D%0Aprint(%24%22a%20is%20%7Ba%7D%22)%0D%0Aa%20%2B%3D%202%0D%0Aprint(%24%22I%20added%202%20and%20now%20it's%20%7Ba%7D%22)&ext=pluto&run=pluto)
 
-## Conditionals
+## 条件语句
 
-Programming isn't just about arithmetics, tho, so let's get into the flow — or the "control flow", as computer scientists would call it.
+然而，编程不仅仅是关于计算，所以让我们进入流程控制，或者正如计算机科学家所称的 “控制流”（"control flow"）。
 
 ```pluto
 a = 1
@@ -61,33 +61,33 @@ else
 	print("The sum is not 4. Could you change a or b to fix it?")
 end
 ```
-#### [Try It Yourself](https://webshell.dev/#code=a%20%3D%201%0D%0Ab%20%3D%202%0D%0A%0D%0Aif%20a%20%2B%20b%20%3D%3D%204%20then%0D%0A%20%20%20%20print(%22The%20sum%20is%204!%22)%0D%0Aelse%0D%0A%20%20%20%20print(%22The%20sum%20is%20not%204.%20Could%20you%20change%20a%20or%20b%20to%20fix%20it%3F%22)%0D%0Aend&ext=pluto&run=pluto)
+#### [自己尝试一下](https://webshell.dev/#code=a%20%3D%201%0D%0Ab%20%3D%202%0D%0A%0D%0Aif%20a%20%2B%20b%20%3D%3D%204%20then%0D%0A%20%20%20%20print(%22The%20sum%20is%204!%22)%0D%0Aelse%0D%0A%20%20%20%20print(%22The%20sum%20is%20not%204.%20Could%20you%20change%20a%20or%20b%20to%20fix%20it%3F%22)%0D%0Aend&ext=pluto&run=pluto)
 
-As you see, the message being printed changes based on whether the expression `a + b == 4` is _true_ or _false_.
+如你所见，打印的消息会根据表达式 `a + b == 4` 是否为 _true_ 或 _false_ 而发生变化。
 
-## Loops
+## 循环
 
-We can't just change _if_ code will run, but also how often. For example, we could make a script that counts from 1 to 10:
+我们不仅可以改变代码是否运行，还可以改变运行的频率。例如，我们可以创建一个从1数到10的脚本：
 
 ```pluto
 for i=1, 10 do
 	print(i)
 end
 ```
-#### [Try It Yourself](https://webshell.dev/#code=for%20i%3D1%2C%2010%20do%0D%0A%20%20%20%20print(i)%0D%0Aend&ext=pluto&run=pluto)
+#### [自己尝试一下](https://webshell.dev/#code=for%20i%3D1%2C%2010%20do%0D%0A%20%20%20%20print(i)%0D%0Aend&ext=pluto&run=pluto)
 
-We can also change the interval. For example, count from 0 to 100 in intervals of 10:
+我们还可以更改间隔。例如，在间隔为10的情况下从0数到100：
 
 ```pluto
 for i=0, 100, 10 do
     print(i)
 end
 ```
-#### [Try It Yourself](https://webshell.dev/#code=for%20i%3D0%2C%20100%2C%2010%20do%0D%0A%20%20%20%20print(i)%0D%0Aend&ext=pluto&run=pluto)
+#### [自己尝试一下](https://webshell.dev/#code=for%20i%3D0%2C%20100%2C%2010%20do%0D%0A%20%20%20%20print(i)%0D%0Aend&ext=pluto&run=pluto)
 
-## Tables
+## 表
 
-Alright, you know the basic control flow, and data types (numbers and string), so let's look at a more interesting data type: tables. These can store organised data, for example, scores for each player in a game:
+好的，现在你了解了基本的控制流和数据类型（数字和字符串），让我们来看一个更有趣的数据类型：表（tables）。它可以存储有组织的多个数据，例如游戏中每个玩家的分数：
 
 ```pluto
 players = {
@@ -99,11 +99,11 @@ for name, score in players do
 	print($"{name} has a score of {score}.")
 end
 ```
-#### [Try It Yourself](https://webshell.dev/#code=players%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%2012%2C%0D%0A%7D%0D%0Afor%20name%2C%20score%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20a%20score%20of%20%7Bscore%7D.%22)%0D%0Aend&ext=pluto&run=pluto)
+#### [自己尝试一下](https://webshell.dev/#code=players%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%2012%2C%0D%0A%7D%0D%0Afor%20name%2C%20score%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20a%20score%20of%20%7Bscore%7D.%22)%0D%0Aend&ext=pluto&run=pluto)
 
-Notice how we're still using a for-loop, but this time we're _iterating_ over the our players table instead of a range of numbers.
+请注意，我们仍然使用了一个 for 循环，但这次我们是在我们的玩家表上进行 _迭代_，而不是在一系列数字上。
 
-We can also store tables within tables, so we could have more data than just a single number for each player:
+我们还可以在表中存储表，因此我们可以为每个玩家存储更多数据，而不仅仅是一个单独的数字：
 
 ```pluto
 players = {
@@ -124,11 +124,11 @@ for name, data in players do
 	print($"{name} has {data.kills} kills and {data.deaths} deaths.")
 end
 ```
-#### [Try It Yourself](https://webshell.dev/#code=players%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%205%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2012%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%7D%0D%0Afor%20name%2C%20data%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20%7Bdata.kills%7D%20kills%20and%20%7Bdata.deaths%7D%20deaths.%22)%0D%0Aend&ext=pluto&run=pluto)
+#### [自己尝试一下](https://webshell.dev/#code=players%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%205%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2012%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%7D%0D%0Afor%20name%2C%20data%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20%7Bdata.kills%7D%20kills%20and%20%7Bdata.deaths%7D%20deaths.%22)%0D%0Aend&ext=pluto&run=pluto)
 
-## Calculating K/D ratios
+## 计算 K/D 比
 
-Let's put all of what we've learned so far to the test and make a program that actually does some work for us instead of the other way around.
+让我们把到目前为止学到的东西都付诸实践，创建一个真正为我们工作的程序，而不是那些简单的例子。
 
 ```pluto
 players = {
@@ -154,13 +154,13 @@ for name, data in players do
     print($"{name} has a K/D of {data.kd}.")
 end
 ```
-#### [Try It Yourself](https://webshell.dev/#code=players%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%205%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2012%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%7D%0D%0A--%20Add%20%22kd%22%20field%20to%20each%20player%0D%0Afor%20players%20as%20player%20do%0D%0A%20%20%20%20player.kd%20%3D%20player.kills%20%2F%20player.deaths%0D%0Aend%0D%0A--%20Print%0D%0Afor%20name%2C%20data%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20a%20K%2FD%20of%20%7Bdata.kd%7D.%22)%0D%0Aend&ext=pluto&run=pluto)
+#### [自己尝试一下](https://webshell.dev/#code=players%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%205%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2012%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%7D%0D%0A--%20Add%20%22kd%22%20field%20to%20each%20player%0D%0Afor%20players%20as%20player%20do%0D%0A%20%20%20%20player.kd%20%3D%20player.kills%20%2F%20player.deaths%0D%0Aend%0D%0A--%20Print%0D%0Afor%20name%2C%20data%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20a%20K%2FD%20of%20%7Bdata.kd%7D.%22)%0D%0Aend&ext=pluto&run=pluto)
 
-Notice another variant of the for-loop: The for-as loop. This is handy for calculating the K/D since we don't care about the name.
+请注意另一种 for 循环的变体：for-as 循环。这对于计算 K/D 比很方便，因为我们不关心玩家的名字。
 
-## Encapsulation in functions
+## 函数中的封装
 
-We've been using functions quite a bit — or at least, the `print` function — so it's about time we make our own function.
+我们已经使用了不少函数，，，好吧，至少有 `print` 函数，所以现在是时候创建我们自己的函数了。
 
 ```pluto
 function calculate_kd(plys: table)
@@ -187,46 +187,46 @@ for name, data in players do
     print($"{name} has a K/D of {data.kd}.")
 end
 ```
-#### [Try It Yourself](https://webshell.dev/#code=function%20calculate_kd(plys%3A%20table)%0D%0A%20%20%20%20for%20plys%20as%20ply%20do%0D%0A%20%20%20%20%20%20%20%20ply.kd%20%3D%20ply.kills%20%2F%20ply.deaths%0D%0A%20%20%20%20end%0D%0Aend%0D%0Aplayers%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%205%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2012%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%7D%0D%0Acalculate_kd(players)%0D%0Afor%20name%2C%20data%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20a%20K%2FD%20of%20%7Bdata.kd%7D.%22)%0D%0Aend&ext=pluto&run=pluto)
+#### [自己尝试一下](https://webshell.dev/#code=function%20calculate_kd(plys%3A%20table)%0D%0A%20%20%20%20for%20plys%20as%20ply%20do%0D%0A%20%20%20%20%20%20%20%20ply.kd%20%3D%20ply.kills%20%2F%20ply.deaths%0D%0A%20%20%20%20end%0D%0Aend%0D%0Aplayers%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%205%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2012%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%7D%0D%0Acalculate_kd(players)%0D%0Afor%20name%2C%20data%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20a%20K%2FD%20of%20%7Bdata.kd%7D.%22)%0D%0Aend&ext=pluto&run=pluto)
 
-And as you can see, the code behaves exactly the same as before! Perhaps not very interesting, but better than the alternative.
+正如你所看到的，代码的行为与以前完全相同！也许不是非常有趣，但比起另一种选择要好。
 
-Let's break down what exactly is happening:
-- On the first line, we declare a function with the name `calculate_kd` and a parameter `plys` of type `table`. Note that the `: table` part is optional, but it's always good to be explicit about assumptions! (Didn't think you'd find relationship advice here, did you?)
-- Then near the end of the script, we call `calculate_kd` with our `players` table as an argument.
+让我们详细分析一下到底发生了什么：
+- 在第一行，我们声明了一个名为 `calculate_kd` 的函数，它有一个类型为 `table` 的参数 `plys`。请注意，`：table` 部分是可选的，但明确表示假设总是很好的！
+- 然后，在脚本的最后，我们使用我们的 `players` 表作为参数调用 `calculate_kd`。
 
-## Local variables
+## 局部变量
 
-Next, I'd like to introduce local variables, but you've actually already seen them! In the example above, the `calculate_kd` function's `plys` argument is a local variable, because it is only available within that function's body.
+接下来，我想介绍局部变量，但实际上你已经见过它们了！在上面的示例中，`calculate_kd` 函数的 `plys` 参数是一个局部变量，因为它只在该函数的主体内可用。
 
-However, other than having a local variable by virtue of it being a function parameter, we can also manually define one just like we've already defined variables except we put `local` before it:
+然而，除了通过将它作为函数参数具有局部变量的特性外，我们还可以手动定义一个，就像我们已经定义了变量一样，只是在它之前加上 `local`：
 
 ```pluto
 local a = 1
 print(a)
 ```
-#### [Try It Yourself](https://webshell.dev/#code=local%20a%20%3D%201%0D%0Aprint(a)&ext=pluto&run=pluto)
+#### [自己尝试一下](https://webshell.dev/#code=local%20a%20%3D%201%0D%0Aprint(a)&ext=pluto&run=pluto)
 
-## Nil values
+## Nil 值
 
-However, what happens when we use a variable we didn't define, or we don't give it a value?
+但是，当我们使用一个没有定义的变量，或者没有给它一个值时，会发生什么？
 
 ```pluto
 local no_value_given
 print(no_value_given)
 print(never_defined)
 ```
-#### [Try It Yourself](https://webshell.dev/#code=local%20no_value_given%0D%0Aprint(no_value_given)%0D%0Aprint(never_defined)%0D%0A&ext=pluto&run=pluto)
+#### [自己尝试一下](https://webshell.dev/#code=local%20no_value_given%0D%0Aprint(no_value_given)%0D%0Aprint(never_defined)%0D%0A&ext=pluto&run=pluto)
 
-As you can see, this prints "nil" two times, so that's the answer — we get `nil` in both cases. `nil` is a special type that is used as the result of valueless expressions.
+正如你所看到的，这会打印两次 "nil"，所以这就是答案 — 在两种情况下我们得到了 `nil`。`nil` 是一种特殊的类型，用作没有值的表达式的结果。
 
-## Where to go from here
+## 下一步到哪
 
-You should now have an understanding of the fundemantals of Pluto. If you want to learn more, the rest of this documentation is certainly a good place to learn more about Pluto.
+现在，你应该已经对 Pluto 的基本原理有了一定的了解。如果你想了解更多，这份文档的其余部分肯定是了解 Pluto 更多信息的好地方。
 
-You could start with some of the Pluto features we already made use of in this guide:
-- [String Interpolation](New%20Features/String%20Interpolation.md) (`$`-strings)
-- [For-As Loop](New%20Features/For-As%20Loop.md)
-- [Type Hinting](New%20Features/Type%20Hinting.md)
+你可以从我们在本指南中已经使用过的一些 Pluto 功能开始学习：
+- [字符串插值](New%20Features/String%20Interpolation.md)（`$`-strings）
+- [For-As 循环](New%20Features/For-As%20Loop.md)
+- [类型提示](New%20Features/Type%20Hinting.md)
 
-If you want to understand the underpinnings of Pluto a bit better, [the Lua manual](https://www.lua.org/manual/5.4/) would be a good place to look.
+如果你想更深入地了解 Pluto 的基础知识，[Lua 手册](https://www.lua.org/manual/5.4/)是一个不错的参考。
