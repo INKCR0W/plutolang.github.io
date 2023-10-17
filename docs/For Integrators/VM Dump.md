@@ -1,15 +1,15 @@
-Pluto offers an optional, configurable feature to see every instruction that is executed in the Lua VM.
+Pluto 提供了一个可选的、可配置的功能，可以查看在 Lua VM 中执行的每条指令。
 
-## Configuration
+## 配置
 
-VM Dump can be enabled by defining `PLUTO_VMDUMP` in `luaconf.h` or your build config.
+VM Dump 可以通过在 `luaconf.h` 或你的构建配置中定义 `PLUTO_VMDUMP` 来启用。
 
-- To reduce noise, you can modify `PLUTO_VMDUMP_COND` to set a custom condition for when VM Dump is active. By default, the condition is `true`.
-- Although not a configuration specific to VM Dump, it should be noted that you can modify the output macros `lua_writestring` and `lua_writeline`.
+- 为了减少不必要的输出，你可以修改 `PLUTO_VMDUMP_COND` 来设置 VM Dump 激活时的自定义条件。默认情况下，条件是 `true`。
+- 虽然不是 VM Dump 的特定配置，但值得注意的是你可以修改输出宏 `lua_writestring` 和 `lua_writeline`。
 
-## What it looks like
+## 它看起来像这样
 
-Given the following code:
+参考以下代码：
 
 ```pluto showLineNumbers
 local value = 3
@@ -27,7 +27,7 @@ end
 -- Break jumps here.
 ```
 
-It will output:
+它将输出:
 
 ```
 VARARGPREP 0        ; prepare for 0 varargs

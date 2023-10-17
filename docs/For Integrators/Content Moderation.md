@@ -1,12 +1,12 @@
-Pluto allows you to moderate what scripts are allowed to run in your environment.
+Pluto 允许你管理在环境中允许运行哪些脚本。
 
-## Disable Compiled Code
+## 禁用编译代码
 
-You can disable execution of compiled bytecode, by defining `PLUTO_DISABLE_COMPILED` in `luaconf.h` or your build config.
+你可以通过在 `luaconf.h` 或你的构建配置中定义 `PLUTO_DISABLE_COMPILED` 来禁用已编译的字节码的执行。
 
-## Filter Loaded Files
+## 过滤已加载的文件
 
-You may already have filters before passing scripts to run onto Pluto, but mechanisms such as `dofile` and `require` may be used to bypass them. To help you combat this, Pluto provides `PLUTO_LOADFILE_HOOK`. For example, if you set it to `ContmodOnLoadfile` in `luaconf.h` or your build config, you only need to define that function somewhere in your code, like this:
+你可能已经在将脚本传递给 Pluto 之前设置了过滤器，但一些机制，如 `dofile` 和 `require`，可能会被用来绕过它们。为了帮助你解决这个问题，Pluto 提供了 `PLUTO_LOADFILE_HOOK`。例如，如果你在 `luaconf.h` 或你的构建配置中将它设置为 `ContmodOnLoadfile`，那么你只需要在你的代码中定义这个函数，就像这样：
 
 ```cpp
 extern "C" bool ContmodOnLoadfile(const char* filename) {
@@ -14,4 +14,4 @@ extern "C" bool ContmodOnLoadfile(const char* filename) {
 }
 ```
 
-This requires you to use Pluto as a static library, as otherwise this linking relationship won't work.
+这要求你将 Pluto 作为一个静态库使用，否则这种链接关系将无法工作。
