@@ -7,7 +7,7 @@ const codeTheme = require('./src/theme/monokai');
 const config = {
   title: 'Pluto',
   tagline: 'A superset of Lua 5.4 — with unique features, optimizations, and improvements.',
-  url: 'https://pluto-lang.org',
+  url: 'https://pluto.crow.pub',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
