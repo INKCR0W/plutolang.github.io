@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Beginner's Guide
+title: 初学者指南
 ---
 
 这篇文章适用于那些对 Lua 完全不熟悉但想立刻开始学习 Pluto 的人。
