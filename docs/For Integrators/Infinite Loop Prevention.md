@@ -1,3 +1,7 @@
+---
+title: 无限循环预防
+---
+
 Pluto 可以通过防止连续的迭代次数过多来检测无限循环。这是因为游戏线程通常会强制用户调用某种 `yield` 机制以将控制返回到游戏线程。在 Pluto 中，你可以指定迭代的硬性限制，然后指定一个函数指针，该函数应该防止在其被调用的循环中发生无限循环。
 ```pluto showLineNumbers title="This will produce an error due to ILP:"
 while true do

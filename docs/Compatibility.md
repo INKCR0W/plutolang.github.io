@@ -1,5 +1,6 @@
 ---
 sidebar_position: 7
+title: 兼容性
 ---
 
 ## Pluto 与 Lua 的兼容性如何？

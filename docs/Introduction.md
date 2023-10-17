@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+title: 什么是Pluto？
 ---
 
 # 什么是 Pluto？

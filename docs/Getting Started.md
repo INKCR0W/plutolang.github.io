@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+title: 开始你的 Pluto 之旅
 ---
 
 # 开始你的 Pluto 之旅
