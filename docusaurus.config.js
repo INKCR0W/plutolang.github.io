@@ -6,7 +6,7 @@ const codeTheme = require('./src/theme/monokai');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Pluto',
-  tagline: 'A superset of Lua 5.4 — with unique features, optimizations, and improvements.',
+  tagline: 'Lua 5.4的超集 — 具有独特的功能、优化和改进。',
   url: 'https://pluto.crow.pub',
   baseUrl: '/',
   onBrokenLinks: 'warn',
@@ -23,8 +23,8 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh-cn',
+    locales: ['zh-cn'],
   },
 
   presets: [
@@ -56,7 +56,7 @@ const config = {
             type: 'doc',
             docId: 'Introduction',
             position: 'left',
-            label: 'Documentation',
+            label: '文档',
           },
           {
             href: 'https://github.com/PlutoLang/Pluto',
