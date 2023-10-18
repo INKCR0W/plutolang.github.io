@@ -4,29 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'New Syntax',
+    title: '新语法',
     Svg: require('@site/static/img/one.svg').default,
     description: (
       <>
-        Pluto implements various popular syntaxes that are absent in Lua.
+        Pluto 实现了 Lua 中缺失的各种流行语法。
       </>
     ),
   },
   {
-    title: 'Optimizations',
+    title: '优化',
     Svg: require('@site/static/img/one.svg').default,
     description: (
       <>
-        Pluto is slightly faster than Lua, but in some instances by a pretty large margin.
+        Pluto 稍微比 Lua 快，且在某些情况下速度差距相当大。
       </>
     ),
   },
   {
-    title: 'Larger Standard Library',
+    title: '更多的标准库',
     Svg: require('@site/static/img/one.svg').default,
     description: (
       <>
-        Pluto aims to meet the standard library of Python, and is slowly encroaching this goal.
+        Pluto的目标是达到Python的标准库水平，而且正在逐步接近这个目标。
       </>
     )
   },
