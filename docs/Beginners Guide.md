@@ -14,9 +14,9 @@ title: 初学者指南
 ```pluto
 print("Hello, world!")
 ```
-#### [自己尝试一下](https://webshell.dev/#code=print(%22Hello%2C%20world!%22)&ext=pluto&run=pluto)
+#### [试一试](https://webshell.dev/#code=print(%22Hello%2C%20world!%22)&ext=pluto&run=pluto)
 
-建议使用 "自己尝试一下" 链接进行尝试。同时，你可以随意修改代码并使用终端重新运行它（上箭头键 + 回车键）。
+建议使用 "试一试" 链接进行尝试。同时，你可以随意修改代码并使用终端重新运行它（上箭头键 + 回车键）。
 
 正如你所看到的，这个程序打印 "Hello, world!"，它通过调用 Lua 的内置 `print` 函数来实现。
 
@@ -30,7 +30,7 @@ print($"2 + 2 is {2 + 2}")
 
 请注意字符串前面的 `$`；这允许我们使用大括号将表达式直接嵌入到字符串中。在这种情况下，我们嵌入了表达式 `2 + 2`，它的值是 4。
 
-#### [自己尝试一下](https://webshell.dev/#code=print(%24%222%20%2B%202%20is%20%7B2%20%2B%202%7D%22)&ext=pluto&run=pluto)
+#### [试一试](https://webshell.dev/#code=print(%24%222%20%2B%202%20is%20%7B2%20%2B%202%7D%22)&ext=pluto&run=pluto)
 
 ## 变量
 
@@ -45,7 +45,7 @@ print($"I added 2 and now it's {a}")
 
 请注意，字符串前面仍然有 `$`，但这次我们嵌入了表达式 `a`，它在这里访问了 `a` 的值。
 
-#### [自己尝试一下](https://webshell.dev/#code=a%20%3D%202%0D%0Aprint(%24%22a%20is%20%7Ba%7D%22)%0D%0Aa%20%2B%3D%202%0D%0Aprint(%24%22I%20added%202%20and%20now%20it's%20%7Ba%7D%22)&ext=pluto&run=pluto)
+#### [试一试](https://webshell.dev/#code=a%20%3D%202%0D%0Aprint(%24%22a%20is%20%7Ba%7D%22)%0D%0Aa%20%2B%3D%202%0D%0Aprint(%24%22I%20added%202%20and%20now%20it's%20%7Ba%7D%22)&ext=pluto&run=pluto)
 
 ## 条件语句
 
@@ -61,7 +61,7 @@ else
 	print("The sum is not 4. Could you change a or b to fix it?")
 end
 ```
-#### [自己尝试一下](https://webshell.dev/#code=a%20%3D%201%0D%0Ab%20%3D%202%0D%0A%0D%0Aif%20a%20%2B%20b%20%3D%3D%204%20then%0D%0A%20%20%20%20print(%22The%20sum%20is%204!%22)%0D%0Aelse%0D%0A%20%20%20%20print(%22The%20sum%20is%20not%204.%20Could%20you%20change%20a%20or%20b%20to%20fix%20it%3F%22)%0D%0Aend&ext=pluto&run=pluto)
+#### [试一试](https://webshell.dev/#code=a%20%3D%201%0D%0Ab%20%3D%202%0D%0A%0D%0Aif%20a%20%2B%20b%20%3D%3D%204%20then%0D%0A%20%20%20%20print(%22The%20sum%20is%204!%22)%0D%0Aelse%0D%0A%20%20%20%20print(%22The%20sum%20is%20not%204.%20Could%20you%20change%20a%20or%20b%20to%20fix%20it%3F%22)%0D%0Aend&ext=pluto&run=pluto)
 
 如你所见，打印的消息会根据表达式 `a + b == 4` 是否为 _true_ 或 _false_ 而发生变化。
 
@@ -74,7 +74,7 @@ for i=1, 10 do
 	print(i)
 end
 ```
-#### [自己尝试一下](https://webshell.dev/#code=for%20i%3D1%2C%2010%20do%0D%0A%20%20%20%20print(i)%0D%0Aend&ext=pluto&run=pluto)
+#### [试一试](https://webshell.dev/#code=for%20i%3D1%2C%2010%20do%0D%0A%20%20%20%20print(i)%0D%0Aend&ext=pluto&run=pluto)
 
 我们还可以更改间隔。例如，在间隔为10的情况下从0数到100：
 
@@ -83,7 +83,7 @@ for i=0, 100, 10 do
     print(i)
 end
 ```
-#### [自己尝试一下](https://webshell.dev/#code=for%20i%3D0%2C%20100%2C%2010%20do%0D%0A%20%20%20%20print(i)%0D%0Aend&ext=pluto&run=pluto)
+#### [试一试](https://webshell.dev/#code=for%20i%3D0%2C%20100%2C%2010%20do%0D%0A%20%20%20%20print(i)%0D%0Aend&ext=pluto&run=pluto)
 
 ## 表
 
@@ -99,7 +99,7 @@ for name, score in players do
 	print($"{name} has a score of {score}.")
 end
 ```
-#### [自己尝试一下](https://webshell.dev/#code=players%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%2012%2C%0D%0A%7D%0D%0Afor%20name%2C%20score%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20a%20score%20of%20%7Bscore%7D.%22)%0D%0Aend&ext=pluto&run=pluto)
+#### [试一试](https://webshell.dev/#code=players%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%2012%2C%0D%0A%7D%0D%0Afor%20name%2C%20score%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20a%20score%20of%20%7Bscore%7D.%22)%0D%0Aend&ext=pluto&run=pluto)
 
 请注意，我们仍然使用了一个 for 循环，但这次我们是在我们的玩家表上进行 _迭代_，而不是在一系列数字上。
 
@@ -124,7 +124,7 @@ for name, data in players do
 	print($"{name} has {data.kills} kills and {data.deaths} deaths.")
 end
 ```
-#### [自己尝试一下](https://webshell.dev/#code=players%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%205%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2012%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%7D%0D%0Afor%20name%2C%20data%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20%7Bdata.kills%7D%20kills%20and%20%7Bdata.deaths%7D%20deaths.%22)%0D%0Aend&ext=pluto&run=pluto)
+#### [试一试](https://webshell.dev/#code=players%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%205%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2012%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%7D%0D%0Afor%20name%2C%20data%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20%7Bdata.kills%7D%20kills%20and%20%7Bdata.deaths%7D%20deaths.%22)%0D%0Aend&ext=pluto&run=pluto)
 
 ## 计算 K/D 比
 
@@ -154,7 +154,7 @@ for name, data in players do
     print($"{name} has a K/D of {data.kd}.")
 end
 ```
-#### [自己尝试一下](https://webshell.dev/#code=players%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%205%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2012%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%7D%0D%0A--%20Add%20%22kd%22%20field%20to%20each%20player%0D%0Afor%20players%20as%20player%20do%0D%0A%20%20%20%20player.kd%20%3D%20player.kills%20%2F%20player.deaths%0D%0Aend%0D%0A--%20Print%0D%0Afor%20name%2C%20data%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20a%20K%2FD%20of%20%7Bdata.kd%7D.%22)%0D%0Aend&ext=pluto&run=pluto)
+#### [试一试](https://webshell.dev/#code=players%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%205%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2012%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%7D%0D%0A--%20Add%20%22kd%22%20field%20to%20each%20player%0D%0Afor%20players%20as%20player%20do%0D%0A%20%20%20%20player.kd%20%3D%20player.kills%20%2F%20player.deaths%0D%0Aend%0D%0A--%20Print%0D%0Afor%20name%2C%20data%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20a%20K%2FD%20of%20%7Bdata.kd%7D.%22)%0D%0Aend&ext=pluto&run=pluto)
 
 请注意另一种 for 循环的变体：for-as 循环。这对于计算 K/D 比很方便，因为我们不关心玩家的名字。
 
@@ -187,7 +187,7 @@ for name, data in players do
     print($"{name} has a K/D of {data.kd}.")
 end
 ```
-#### [自己尝试一下](https://webshell.dev/#code=function%20calculate_kd(plys%3A%20table)%0D%0A%20%20%20%20for%20plys%20as%20ply%20do%0D%0A%20%20%20%20%20%20%20%20ply.kd%20%3D%20ply.kills%20%2F%20ply.deaths%0D%0A%20%20%20%20end%0D%0Aend%0D%0Aplayers%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%205%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2012%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%7D%0D%0Acalculate_kd(players)%0D%0Afor%20name%2C%20data%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20a%20K%2FD%20of%20%7Bdata.kd%7D.%22)%0D%0Aend&ext=pluto&run=pluto)
+#### [试一试](https://webshell.dev/#code=function%20calculate_kd(plys%3A%20table)%0D%0A%20%20%20%20for%20plys%20as%20ply%20do%0D%0A%20%20%20%20%20%20%20%20ply.kd%20%3D%20ply.kills%20%2F%20ply.deaths%0D%0A%20%20%20%20end%0D%0Aend%0D%0Aplayers%20%3D%20%7B%0D%0A%20%20%20%20%5B%22John%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2015%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%205%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Jane%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2010%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%20%20%20%20%5B%22Bob%22%5D%20%3D%20%7B%0D%0A%20%20%20%20%20%20%20%20%5B%22kills%22%5D%20%3D%2012%2C%0D%0A%20%20%20%20%20%20%20%20%5B%22deaths%22%5D%20%3D%208%2C%0D%0A%20%20%20%20%7D%2C%0D%0A%7D%0D%0Acalculate_kd(players)%0D%0Afor%20name%2C%20data%20in%20players%20do%0D%0A%20%20%20%20print(%24%22%7Bname%7D%20has%20a%20K%2FD%20of%20%7Bdata.kd%7D.%22)%0D%0Aend&ext=pluto&run=pluto)
 
 正如你所看到的，代码的行为与以前完全相同！也许不是非常有趣，但比起另一种选择要好。
 
@@ -205,9 +205,9 @@ end
 local a = 1
 print(a)
 ```
-#### [自己尝试一下](https://webshell.dev/#code=local%20a%20%3D%201%0D%0Aprint(a)&ext=pluto&run=pluto)
+#### [试一试](https://webshell.dev/#code=local%20a%20%3D%201%0D%0Aprint(a)&ext=pluto&run=pluto)
 
-## Nil 值
+## nil 值
 
 但是，当我们使用一个没有定义的变量，或者没有给它一个值时，会发生什么？
 
@@ -216,11 +216,11 @@ local no_value_given
 print(no_value_given)
 print(never_defined)
 ```
-#### [自己尝试一下](https://webshell.dev/#code=local%20no_value_given%0D%0Aprint(no_value_given)%0D%0Aprint(never_defined)%0D%0A&ext=pluto&run=pluto)
+#### [试一试](https://webshell.dev/#code=local%20no_value_given%0D%0Aprint(no_value_given)%0D%0Aprint(never_defined)%0D%0A&ext=pluto&run=pluto)
 
 正如你所看到的，这会打印两次 "nil"，所以这就是答案 — 在两种情况下我们得到了 `nil`。`nil` 是一种特殊的类型，用作没有值的表达式的结果。
 
-## 下一步到哪
+## 下一步
 
 现在，你应该已经对 Pluto 的基本原理有了一定的了解。如果你想了解更多，这份文档的其余部分肯定是了解 Pluto 更多信息的好地方。
 

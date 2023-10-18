@@ -1,14 +1,15 @@
 ---
 sidebar_position: 16
+title: Constexpr 属性
 ---
-Pluto adds the `<constexpr>` attribute which is a strengthened version of the `<const>` attribute.
+Pluto添加了 `<constexpr>` 属性，它是 `<const>` 属性的增强版本。
 
-So, both of these lines of code are valid and mean the same thing:
+因此，这两行代码都是有效的，意思是相同的：
 ```pluto
 local a <const> = 123
 local a <constexpr> = 123
 ```
-However, `<constexpr>` also enforces that the assigned variable is a compile-time constant:
+然而，`<constexpr>` 还强制要求分配的变量是编译时常量：
 ```pluto
 local a <const> = {}
 // ERROR:

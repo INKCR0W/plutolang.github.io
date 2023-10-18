@@ -26,7 +26,7 @@ const FeatureList = [
     Svg: require('@site/static/img/one.svg').default,
     description: (
       <>
-        Pluto的目标是达到Python的标准库水平，而且正在逐步接近这个目标。
+        Pluto 的目标是达到 Python 的标准库水平，而且正在逐步接近这个目标。
       </>
     )
   },

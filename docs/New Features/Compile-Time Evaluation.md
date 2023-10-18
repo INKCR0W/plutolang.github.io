@@ -1,8 +1,12 @@
-Pluto's parser provides some powerful constructs which allow you to write code that will never be seen at runtime.
+---
+title: 编译时评估
+---
 
-## Function calls
+Pluto的解析器提供了一些强大的结构，允许您编写在运行时永远不会看到的代码。
 
-Certain standard library functions can be called at compile-time, as long as the arguments are also known at compile-time, by using the "$" symbol before the function call.
+## 函数调用
+
+只要参数在编译时也是已知的，可以在编译时使用 "$" 符号在特定的标准库函数前调用它们。
 
 ```pluto showLineNumbers
 local runtime = require("crypto").joaat("Hello, World!")
@@ -10,7 +14,7 @@ local compile = $crypto.joaat("Hello, World!")
 
 assert(runtime == compile)
 ```
-If you're unfamiliar with compile-time evaluation, this is essentially what the code turns into:
+如果您不熟悉编译时评估，这是代码的转换过程：
 ```pluto showLineNumbers
 local runtime = require("crypto").joaat("Hello, World!")
 local compile = 847757641 -- The JOAAT hash of "Hello, World!"
@@ -18,22 +22,22 @@ local compile = 847757641 -- The JOAAT hash of "Hello, World!"
 assert(runtime == compile)
 ```
 
-This is available on proloaded Pluto libraries, such as:
+这在预加载的Pluto库上可用，例如：
 - `json`
 - `base32`
 - `base58`
 - `base64`
 - `crypto`
 
-And on the following functions:
+以及以下函数：
 - `tostring`
 - `utostring`
 - `tonumber`
 - `utonumber`
 
-## Conditionals
+## 条件语句
 
-If there is certain code you only want to have compiled in for a certain build, such as a debug build, you can use compile-time conditionals:
+如果有一些代码只想在特定构建中编译，比如调试构建，您可以使用编译时条件语句：
 
 ```pluto
 local DEBUG <constexpr> = true
@@ -45,4 +49,4 @@ $else
 $end
 ```
 
-In this case, only one of the two paths will be compiled in; the rest will not take up any space. We're also using the [constexpr attribute](Constexpr Attribute.md) here, for stricter guarantees than `<const>`, although `$if` would throw an error if the condition was not known at compile-time.
+在这种情况下，只有两个路径中的一个会被编译；其余的不会占用任何空间。这里还使用了 [constexpr 属性](Constexpr Attribute.md)，比 `<const>` 更严格的保证，尽管如果条件在编译时未知，`$if` 会引发错误。

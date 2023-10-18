@@ -1,11 +1,12 @@
 ---
 sidebar_position: 3
+title: Continue 语句
 ---
-Continue statements, like `break`, are meant to be used in loops. They skip the current iteration of the loop.
+类似于 `break`，continue 语句用于循环，用于跳过当前循环迭代。
 
-They introduce a new keyword, `continue`. These cannot be used inside switch statements.
-```pluto showLineNumbers title="Example Code"
--- Print every number besides five.
+它引入了一个新的关键字，`continue`。注意它不能在 switch 语句内部使用。
+```pluto showLineNumbers title="示例代码"
+-- 打印除了五以外的每个数字。
 for i = 1, 10 do
     if i == 5 then
         continue
@@ -14,20 +15,20 @@ for i = 1, 10 do
     -- continue jumps here.
 end
 ```
-#### [Try It Yourself](https://pluto-lang.org/web/#code=--%20Print%20every%20number%20besides%20five.%0D%0Afor%20i%20%3D%201%2C%2010%20do%0D%0A%20%20%20%20if%20i%20%3D%3D%205%20then%0D%0A%20%20%20%20%20%20%20%20continue%0D%0A%20%20%20%20end%0D%0A%20%20%20%20print(i)%0D%0A%20%20%20%20--%20continue%20jumps%20here.%0D%0Aend)
+#### [试一试](https://pluto-lang.org/web/#code=--%20Print%20every%20number%20besides%20five.%0D%0Afor%20i%20%3D%201%2C%2010%20do%0D%0A%20%20%20%20if%20i%20%3D%3D%205%20then%0D%0A%20%20%20%20%20%20%20%20continue%0D%0A%20%20%20%20end%0D%0A%20%20%20%20print(i)%0D%0A%20%20%20%20--%20continue%20jumps%20here.%0D%0Aend)
 
 :::caution
-Note, `continue` will skip code. If any code within your loop will determine if the loop continues, make sure `continue` doesn't jump over it.
+请注意，`continue` 会跳过代码。请确保 `continue` 不会跳过循环内判断是否继续循环的代码。
 :::
 
-## Continue's Only Argument
-This keyword accepts an optional integral argument which tells it how many levels of enclosing loops it should skip to the end of. The default value is 1, thus skipping to the end of the current loop.
-```pluto showLineNumbers title="Example 1"
+## `continue` 的唯一参数
+这个关键字接受一个可选的整数参数，指示它应该跳过多少层封闭的循环，直到结束。默认值为1，因此跳过到当前循环的结束。
+```pluto showLineNumbers title="示例 1"
 for i = 1, 10 do -- Loop 1.
     continue 1 --> This is identical to `continue` without any arguments.
 end
 ```
-```pluto showLineNumbers title="Example 2"
+```pluto showLineNumbers title="示例 2"
 for i = 1, 10 do -- Loop 1.
     for ii = 1, 5 do -- Loop 2.
         continue 1 --> This will continue from Loop 2.
@@ -36,5 +37,5 @@ for i = 1, 10 do -- Loop 1.
 end
 ```
 
-## Using Compatibility Mode?
-You may need to use `pluto_continue` instead of `continue`.
+## 使用兼容模式？
+您可能需要使用 `pluto_continue` 而不是 `continue`。

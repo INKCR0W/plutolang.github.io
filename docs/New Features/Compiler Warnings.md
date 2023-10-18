@@ -1,17 +1,21 @@
-Pluto offers optional compiler warnings for certain misbehaviors.
+---
+title: 编译器警告
+---
 
-These are the current warning circumstances:
-- Type mismatch.
-  - When the type of an expression doesn't match the hinted type.
-- Variable shadowing.
-  - When a new local is created with the same name as an existing one.
-- Unreachable code.
-  - When a block of code will never be ran.
-- Excessive arguments.
-  - When too many arguments are given to a non-vararg function.
+Pluto提供了针对某些不当行为的可选编译器警告。
 
-## Examples
-#### Type Mismatch
+目前的警告情况包括：
+- 类型不匹配。
+  - 当表达式的类型与预期类型不匹配时。
+- 变量屏蔽。
+  - 当创建一个与现有变量同名的新局部变量时。
+- 无法到达的代码。
+  - 当一段代码永远不会被执行时。
+- 过多的参数。
+  - 当对非变参函数提供了过多的参数时。
+
+## 示例
+#### 类型不匹配
 ```pluto showLineNumbers
 local var: number = 5
 var = "hello"
@@ -21,7 +25,7 @@ file.pluto:2: warning: variable type mismatch [type-mismatch]
     2 | var = "hello"
       | ^^^^^^^^^^^^^ here: 'var' type-hinted as 'number', but assigned a string value.
 ```
-#### Variable Shadowing
+#### 变量屏蔽
 ```pluto showLineNumbers
 local var = 5
 do
@@ -33,7 +37,7 @@ file.pluto:3: warning: duplicate local declaration [var-shadow]
     3 | local var = "hello"
       | ^^^^^^^^^^^^^^^^^^^ here: this shadows the initial declaration of 'var' on line 1.
 ```
-#### Unreachable Code
+#### 无法到达的代码
 ```pluto showLineNumbers
 for i = 1, 10 do
   if i == 5 then
@@ -47,7 +51,7 @@ file.pluto:4: warning: unreachable code [unreachable-code]
     4 | print("message")
       | ^^^^^^^^^^^^^^^^ here: this code comes after an escaping 'continue' statement.
 ```
-#### Excessive Arguments
+#### 过多的参数
 ```pluto showLineNumbers
 local function func(a, b, c)
 
@@ -61,9 +65,9 @@ file.pluto:5: warning: too many arguments [excessive-arguments]
       | ^^^^^^^^^^^^^^^^ here: expected 3 arguments, got 4.
 ```
 
-## Compile-time Configuration
-Warnings can be disabled during compile-time, so you can make exceptions for the next line, a region of code, or the entire warning itself.
-```pluto title="These are the configuration comments."
+## 编译时配置
+警告可以在编译时禁用，因此您可以为下一行、代码区域或整个警告本身创建例外。
+```pluto title="这些是配置注释"
 --- @pluto_warnings: enable-all
 --- @pluto_warnings: disable-all
 

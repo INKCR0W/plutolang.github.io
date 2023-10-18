@@ -1,7 +1,8 @@
 ---
 sidebar_position: 9
+title: 枚举 
 ---
-Pluto adds the following syntax:
+Pluto添加了以下语法：
 ```pluto
 enum MyEnum begin
 	OPTION_1,
@@ -14,7 +15,7 @@ assert(OPTION_2 == 2)
 assert(OPTION_3 == 3)
 ```
 
-Enums can start at a base number, and increment from there.
+枚举可以从一个基数开始，并从基数开始递增。 
 ```pluto
 enum MyEnum begin
 	OPTION_1 = 0,
@@ -28,7 +29,7 @@ assert(OPTION_2 == 1)
 assert(OPTION_3 == 5)
 assert(OPTION_4 == 6)
 ```
-Since this enum has a name, we can also access its enumerators with that:
+由于该枚举具有名称，因此也可以使用名称访问其枚举数: 
 ```pluto
 assert(MyEnum.OPTIION_1 == 0)
 ```
