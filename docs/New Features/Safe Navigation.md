@@ -1,23 +1,26 @@
 ---
 sidebar_position: 17
+title: 安全导航
 ---
-Accessing deeply nested fields which can potentially be `nil` was problematic, because you'd need an unreasonable amount of guard clauses to prevent an "attempt to index nil" error. Pluto now offers this syntax:
-```pluto showLineNumbers title="Basic Usage"
+
+这个功能用于访问可能为 `nil` 的深层字段，它避免了需要大量的保护条件来防止"尝试索引nil"错误。在 Pluto 中，您可以使用如下语法：
+
+```pluto showLineNumbers title="基本用法"
 local value = a?.b?.c?.d
 ```
-In this example, every field is nil. However, this does not throw an error. It simply returns `nil`. Without safe table navigation, this would've returned several "attempt to index nil" errors.
-```pluto showLineNumbers title="Practical Usage"
--- Pretend userConfig is parsed from a JSON file, or something.
 
---- Returning the user's preferred color, or Red if they have no preferred color.
+在这个示例中，每个字段都是 `nil`。然而，这不会引发错误，而是简单地返回 `nil`。如果没有安全表导航，这将会引发多个"尝试索引nil"错误。
+
+您还可以看到如下的实际用法示例：
+
+```pluto showLineNumbers title="实际用法"
+-- 假设 userConfig 是从 JSON 文件中解析出来的。
+
+--- 返回用户首选的颜色，如果他们没有首选颜色则返回红色。
 local function get_color()
     return userConfig.colors?.preferred ?? "Red"
 end
 
 print(get_color())
 ```
-:::info
-These cannot be used for statements, like `a?.b?.c = 0`. They're only valid as expressions.
-
-Safe Navigation was written by Sven Olsen.
-:::
+请注意，这些语法不能用于语句，如 `a?.b?.c = 0`。它们只能用作表达式。 "安全导航" 功能由 Sven Olsen 编写。

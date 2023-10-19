@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
+title: 表冻结
 ---
-Tables can now be frozen at their current state to forbid any future modification. This action is irreversible and permanent for the lifespan of the table.
+现在可以冻结表在其当前状态以禁止任何未来的修改。这一操作是不可逆的，对于表的寿命而言是永久的。
 
-```pluto showLineNumbers title="Example Code 1"
--- Disallowing any edits to the global environment table.
+```pluto showLineNumbers title="示例代码 1"
+-- 不允许对全局的表进行任何编辑
 table.freeze(_G)
 
 // ERROR:
@@ -12,8 +13,8 @@ _G.string = {}
 // ERROR:
 -- file.pluto:2: attempt to modify frozen table.
 ```
-```pluto showLineNumbers title="Example Code 2"
--- Creating a constant local that's associated with a frozen table.
+```pluto showLineNumbers title="示例代码 2"
+-- 创建与冻结表相关联的常量
 local Frozen <const> = table.freeze({ 1, 2, 3 })
 
 // ERROR:
@@ -31,8 +32,8 @@ rawset(Frozen, "key", "value")
 // ERROR:
 -- file.pluto:10: attempt to modify frozen table.
 ```
-```pluto showLineNumbers title="Example Code 3"
---- Trying to swap the value with the debug library.
+```pluto showLineNumbers title="示例代码 3"
+--- 尝试使用调试库交换该值。
 for i = 1, 249 do
   local name, value = debug.getlocal(1, i)
   if name == "Frozen" then
@@ -43,9 +44,9 @@ for i = 1, 249 do
   end
 end
 ```
-### What will this prevent?
-All modifications to the table from within the Lua environment will be prevented, including those from the `debug` library.
+### 这将阻止什么？
+这将阻止从 Lua 环境内部进行的所有对表格的修改，包括来自`debug`库的修改。
 
 :::caution
-If you're going to use this for a sandbox, ensure you call `table.freeze` before any users can access the Lua environment, otherwise they can replace that function.
+如果您打算将此用于一个沙盒环境，请确保在用户访问 Lua 环境之前调用 `table.freeze`，否则他们可以替换该函数。
 :::

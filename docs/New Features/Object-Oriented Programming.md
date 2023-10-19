@@ -1,31 +1,34 @@
-Pluto makes a plethora of improvements when it comes to object-oriented programming.
+---
+title: 面向对象编程
+---
+Pluto 在面向对象编程方面进行了众多改进。
 
-## Method Creation
+## 方法创建
 
-A series of methods was otherwise ugly to implement into a Lua table.
-```pluto showLineNumbers title="Old Code"
+以前，在 Lua 表中实现一系列方法是相当繁琐的。
+```pluto showLineNumbers title="旧代码"
 local t = {}
 
 function t:f1(...) end
 function t:f2(...) end
 function t:f3(...) end
 ```
-Now, you can inline these statements inside of your table.
-```pluto showLineNumbers title="New Code"
+现在，您可以内联这些语句到表中。
+```pluto showLineNumbers title="新代码"
 local t = {
     function f1() end,
     function f2() end,
     function f3() end
 }
 ```
-This automatically marks the functions as methods.
+这会自动标记这些函数为方法。
 :::caution
-Keep in mind, this produces *methods*, meaning you'll need to use the colon invocation syntax to avoid positional ambiguities in your parameters.
+请注意，这样生成的是*方法*，这意味着您需要使用冒号调用语法，以避免参数的位置歧义。
 :::
 
-## Static Functions
+## 静态函数
 
-For consistency with the above syntax, you can use 'static function' to declare non-method functions in your tables:
+为了与上述语法保持一致，您可以使用 'static function' 来声明表中的非方法函数：
 
 ```pluto showLineNumbers
 local t = {
@@ -36,9 +39,9 @@ local t = {
 t.say("Hello") -- "Hello"
 ```
 
-## New Expression
+## 新表达式
 
-Pluto adds an easy way to make instances with the `new` expression. This expression will also call the `__construct` method if it exists.
+Pluto 添加了一个方便的方法来使用 `new` 表达式创建实例。这个表达式还会调用 `__construct` 方法（如果存在的话）。
 
 ```pluto showLineNumbers
 local Human = {
@@ -50,9 +53,9 @@ local john = new Human("John")
 print(john.name) -- John
 ```
 
-## Class Statement
+## 类语句
 
-The `class` statement is similar to a table constructor, but it does not require commas or semicolons:
+`class` 语句类似于表构造器，但不需要逗号或分号：
 
 ```pluto showLineNumbers
 class Human
@@ -67,11 +70,11 @@ end
 local john = new Human("John")
 ```
 
-The class statement also supports modifiers: `local class NAME`, `export class NAME`
+类语句还支持修饰符：`local class NAME`、`export class NAME`。
 
-### Class Expression
+### 类表达式
 
-There is also a `class` expression, which can be used e.g. when assigning to a variable:
+还有一个 `class` 表达式，可以在赋值给变量时使用，例如：
 
 ```pluto showLineNumbers
 local Human = class
@@ -81,9 +84,9 @@ local Human = class
 end
 ```
 
-### Extends
+### 继承
 
-The class statement also supports `extends` to specify a parent:
+类语句还支持 `extends` 来指定父类：
 
 ```pluto showLineNumbers
 class Entity
@@ -97,11 +100,11 @@ local human = new Human()
 print(human.age) -- 1
 ```
 
-This also adds a `__parent` field to Human.
+这也会在 Human 类中添加一个 `__parent` 字段。
 
-## Parent Expression
+## 父类表达式
 
-The `parent` expression is a shorthand for `self.__parent`, which also supports method call syntax, in which case it's a shorthand for `self.__parent.METHOD(self, ...)`.
+`parent` 表达式是 `self.__parent` 的简写，还支持方法调用语法，在这种情况下，它是 `self.__parent.METHOD(self, ...)` 的简写。
 
 ```pluto showLineNumbers
 class Entity
@@ -111,8 +114,8 @@ class Entity
 end
 
 class Human extends Entity
-    -- If we don't define __construct, the parent-constructor would be called automatically.
-    -- However, if we overwrite it, we can use parent:__construct to call it manually.
+    -- 如果我们不定义 __construct，父类构造函数会自动调用。
+    -- 但是，如果我们重写它，我们可以使用 parent:__construct 手动调用它。
     function __construct(name)
         parent:__construct(name)
     end
@@ -122,11 +125,11 @@ local human = new Human("John")
 print(human.name) -- "John"
 ```
 
-Note that if you have a local variable (or function parameter) called "parent", the `parent` expression will defer to it.
+请注意，如果您有一个名为 "parent" 的局部变量（或函数参数），`parent` 表达式将会引用它。
 
-## Constructor Promotion
+## 构造函数提升
 
-Because a common task of `__construct` methods is to assign the value of arguments to table fields, Pluto provides a simple syntax to reduce this boilerplate:
+因为 `__construct` 方法的常见任务是将参数的值分配给表字段，Pluto 提供了一个简单的语法来减少这种模板代码：
 
 ```pluto
 class Human
@@ -138,9 +141,9 @@ local human = new Human("John")
 print(human.name) -- "John"
 ```
 
-## Instanceof Operator
+## instanceof 操作符
 
-The `instanceof` operator can be used to check if a table is a class instance, including inherited classes:
+`instanceof` 操作符用于检查一个表是否是一个类的实例，包括继承的类：
 
 ```pluto showLineNumbers
 class Entity end
@@ -149,19 +152,21 @@ local e = new Entity()
 local h = new Human()
 print(e instanceof Entity) -- true
 print(e instanceof Human) -- false
-print(h instanceof Entity) -- true (by inheritance)
+print(h instanceof Entity) -- true（通过继承）
 print(h instanceof Human) -- true
 ```
-It can also be used as a function:
+
+它也可以作为一个函数使用：
+
 ```pluto showLineNumbers
 class Entity end
 local e = new Entity()
 print(instanceof(e, Entity)) -- true
 ```
 
-## Using Compatibility Mode?
+## 使用兼容模式？
 
-Some of the syntax discussed here may be different due to compatiblity mode:
+由于兼容模式，这里讨论的一些语法可能会有所不同：
 - `new` -> `pluto_new`
 - `class` -> `pluto_class`
 - `parent` -> `pluto_parent`

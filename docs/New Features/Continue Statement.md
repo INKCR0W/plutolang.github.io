@@ -38,4 +38,4 @@ end
 ```
 
 ## 使用兼容模式？
-您可能需要使用 `pluto_continue` 而不是 `continue`。
+你可能需要使用 `pluto_continue` 而不是 `continue`。

@@ -1,8 +1,9 @@
 ---
 sidebar_position: 10
+title: For-As 循环
 ---
-When you only want to iterate over the values of a table, you can use Pluto's for-as syntax.
-```pluto showLineNumbers title="New Code"
+当您只想遍历表的值时，可以使用Pluto的for-as语法。
+```pluto showLineNumbers title="新方法"
 local t = { 1, 2, 3, "hello", "world" }
 for t as value do
     print(value)
@@ -14,7 +15,7 @@ end
 -- hello
 -- world
 ```
-That code is identical to this:
+这段代码等价于下面的代码：
 ```pluto showLineNumbers title="Old Code"
 local t = { 1, 2, 3, "hello", "world" }
 for _, value in t do
@@ -23,5 +24,5 @@ end
 ```
 
 :::info
-The bytecode of this feature is only backwards-compatible with Lua when `pairs` or `ipairs` is used.
+这个功能的字节码只有在使用`pairs`或`ipairs`时才与Lua向后兼容。
 :::

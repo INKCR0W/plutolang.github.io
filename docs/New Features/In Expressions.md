@@ -1,8 +1,9 @@
 ---
 sidebar_position: 13
+title: 在表达式中
 ---
-Searching a string for a substring, or searching an array for an element is a very simple operation now. The `in` operator has been extended to support these operations.
-```pluto showLineNumbers title="Searching for a substring."
+在字符串中搜索子字符串或在数组中搜索元素现在变得非常简单。`in` 操作符已经扩展以支持这些操作。
+```pluto showLineNumbers title="搜索子字符串。"
 local a = "hello"
 local b = "hello world"
 
@@ -15,7 +16,7 @@ local r5 = "goodbye" in "hello world"
 assert(r1 and r2 and r3 and r4) -- They'll all return true.
 assert(r5 == false) -- Except this one.
 ```
-```pluto showLineNumbers title="Searching a table for keys and elements."
+```pluto showLineNumbers title="在表中搜索键和元素。"
 local t = { [5] = "five", [6] = "six", [7] = "seven", key = "value" }
 
 assert(("key" in t) == true) -- Found a key with the value of 'key'.
@@ -23,11 +24,11 @@ assert((5 in t) == true) -- Found a key with the value of '5'.
 assert((3 in t) == false) -- No key with the value of '3'.
 ```
 
-## Rules
-- The right-hand operand must always be a table or a string.
-- The left-hand operand must be a string if the right-hand operand is a string.
-- The left-hand operand can be anything if the right-hand operand is a table.
+## 规则
+- 右操作数必须始终是一个表或字符串。
+- 如果右操作数是字符串，则左操作数必须是一个字符串。
+- 如果右操作数是表，左操作数可以是任何类型。
 
 :::caution
-The bytecode of this feature is not backwards-compatible with Lua.
+这一功能的字节码与Lua不兼容。
 :::

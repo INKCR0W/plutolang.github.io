@@ -1,9 +1,10 @@
 ---
 sidebar_position: 5
+title: 导出修饰符
 ---
-The `export` modifier allows you to automatically aggregate things you want to export into a table.
+`export`修饰符允许您自动将要导出的内容聚合到一个表中。
 
-```pluto title="Old Code"
+```pluto title="旧方法"
 local version = 2
 
 local function add(a, b)
@@ -16,7 +17,7 @@ return {
 }
 ```
 
-```pluto title="New Code"
+```pluto title="新方法"
 export version = 2
 
 export function add(a, b)
@@ -24,8 +25,8 @@ export function add(a, b)
 end
 ```
 
-The return statement is automatically generated.
+Pluto 为您自动生成返回语句。
 
-## Using Compatibility Mode?
+## 使用兼容模式？
 
-You may need to use `pluto_export` instead of `export`.
+你可能需要使用 `pluto_export` 而不是 `export`.

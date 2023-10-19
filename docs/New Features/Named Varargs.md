@@ -1,7 +1,8 @@
 ---
 sidebar_position: 14
+title: 命名可变参数
 ---
-If you have a function that takes varargs and you want them in a table, you'd have to do something like this:
+如果您有一个接受可变参数的函数，并希望它们保存在一个表中，您需要做类似这样的操作：
 
 ```pluto
 function vfunc(...)
@@ -13,7 +14,7 @@ end
 vfunc("Hello") -- "Hello"
 ```
 
-But, with named varargs, it can be as simple as this:
+但是，使用命名的可变参数，可以简化为这样：
 
 ```pluto
 function vfunc(...args)

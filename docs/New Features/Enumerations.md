@@ -34,8 +34,8 @@ assert(OPTION_4 == 6)
 assert(MyEnum.OPTIION_1 == 0)
 ```
 
-## Scoped Enums
-You can force usage of the ENUM.ENUMERATOR syntax by using 'enum class':
+## 有作用域的枚举
+你可以通过使用 'enum class' 强制使用 ENUM.ENUMERATOR 语法：
 ```pluto
 enum class MyEnum begin
 	OPTION_1,
@@ -47,8 +47,8 @@ assert(OPTION_1 == nil)
 assert(MyEnum.OPTION_1 == 1)
 ```
 
-## Reflection
-When you have a named enum, not only can you get its enumerators, but also reflect upon it with some methods:
+## 反射
+当你有一个具有名称的枚举时，你不仅可以获取它的枚举值，还可以使用一些方法对其进行反射操作：
 ```pluto
 enum MyEnum begin
 	OPTION_1,
@@ -60,10 +60,10 @@ for k, v in MyEnum:kvmap() do
 	print(k, v) -- "OPTION_1	1" ...
 end
 ```
-The following methods are available: `:names()`, `:values()`, `:kvmap()`, `:vkmap()`
+可以用以下这些方法：`:names()`、`:values()`、`:kvmap()`、`:vkmap()`
 
-## Anonymous Enums
-Enums can also be anonymous:
+## 匿名枚举
+枚举也可以是匿名的
 ```pluto
 enum begin
 	OPTION_1,
@@ -76,5 +76,5 @@ assert(OPTION_2 == 2)
 assert(OPTION_3 == 3)
 ```
 
-## Using Compatibility Mode?
-You may need to use `pluto_enum` instead of `enum`.
+## 使用兼容模式？
+你可能需要使用 `pluto_enum` 而不是 `enum`。
