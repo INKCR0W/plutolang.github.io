@@ -1,9 +1,9 @@
 {
-    "label": "New Operators",
+    "label": "新操作符",
     "position": 3,
     "link": {
       "type": "generated-index",
-      "description": "New operators implemented by Pluto."
+      "description": "Pluto 实现的新操作符。"
     }
   }
   

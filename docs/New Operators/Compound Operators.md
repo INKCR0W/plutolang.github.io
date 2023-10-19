@@ -1,27 +1,31 @@
-Pluto implements a plethora of compound operators, which are actually faster than their Lua counterparts.
-# Additions
-- Modulo: `%=`
-- Addition: `+=`
-- Exponent: `^=`
-- Bitwise OR: `|=`
-- Subtraction: `-=`
-- Bitshift left: `<<=`
-- Bitwise AND: `&=`
-- Float division: `/=`
-- Bitshift right: `>>=`
-- Multiplication: `*=`
-- Concatenation: `..=`
-- Integer division: `//=`
-- Null-Coalescing: `??=`
-# Why are they faster?
-They store their left-operand in a temporary register, which reduces a lookup & makes them roughly 30% faster.
+---
+title: 复合操作符
+---
 
-```pluto title="Example Code"
+Pluto 实现了大量的复合操作符，而且它们的确比 Lua 中的对应操作更快。
+# 添加项
+- 取余: `%=`
+- 加法: `+=`
+- 减法: `-=`
+- 乘法: `*=`
+- 位或: `|=`
+- 位与: `&=`
+- 位左移: `<<=`
+- 位右移: `>>=`
+- 指数运算: `^=`
+- 浮点除法: `/=`
+- 整数除法: `//=`
+- 空值合并: `??=`
+- 字符串连接: `..=`
+# 它们为什么更快？
+它们将左操作数存储在一个临时寄存器中，从而减少了查找操作，这使它们大致快了30%。
+
+```pluto title="示例代码"
 local a = 5
 
--- Old
+-- 旧的
 a = a + 5
 
--- New
+-- 新的
 a += 5
 ```

@@ -1,3 +1,7 @@
-Pluto implements alternative operators, which are aliases for other operators.
-- `**` is an alias for `^`, the exponent operator.
-- `!=` is an alias for `~=`, the inequality operator.
+---
+title: 备选操作符
+---
+
+Pluto 实现了备选操作符，这些操作符是其他操作符的别名。
+- `**` 是 `^` 的别名，表示指数运算符。
+- `!=` 是 `~=` 的别名，表示不等运算符。

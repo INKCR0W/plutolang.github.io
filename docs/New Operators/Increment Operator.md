@@ -1,4 +1,8 @@
-Pluto provides an easy way to increment variables using the prefixed ++ operator:
+---
+title: 递增操作符
+---
+
+Pluto 提供了一种简便的递增方式 —— 使用前缀的 `++` 操作符：
 
 ```pluto
 local x = 1
@@ -6,15 +10,15 @@ local x = 1
 print(x) -- 2
 ```
 
-It can also be used as an expression:
+它也可以用作表达式：
 
 ```pluto
 local x = 1
 print(++x) -- 2
--- x is still 2 at this point
+-- x 到这个位置依旧是2
 ```
 
-In addition to being more handy due to being usable as an expression, it is also shorter than the equivalent Pluto code using compound operators:
+除了因为可以用作表达式而更方便之外，它还比使用复合操作符的等效 Pluto 代码更短：
 
 ```pluto
 local x = 1
@@ -22,7 +26,7 @@ x += 1
 print(x) -- 2
 ```
 
-And especially compared to the plain Lua approach:
+特别是与纯 Lua 方法相比：
 
 ```pluto
 local x = 1

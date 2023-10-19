@@ -1,43 +1,46 @@
-The Walrus operator allows you to perform assignment expresssions, where the second operand to your assignment is the value of the expression.
+---
+title: 海象操作符
+---
 
+海象操作符（Walrus Operator）允许您执行赋值表达式，其中赋值的第二个操作数是表达式的值。
 ### Examples
 ```pluto showLineNumbers
 if a := get_value() then
-	-- 'a' was assigned a truthy value.
+	-- 'a' 被赋予一个真值。
 else
-	-- 'a' was assigned a falsy value.
+	-- 'a' 被赋予一个假值。
 end
 
---> This code is semantically equal.
+--> 这段代码在语义上是等价的。
 local a = get_value()
 if a then
-	-- 'a' was assigned a truthy value.
+	-- 'a' 被赋予一个真值。
 else
-	-- 'a' was assigned a falsy value.
+	-- 'a' 被赋予一个假值。
 end
 ```
 
-Expressions for the Walrus operator may be evaluated multiple times in circumstances like loops.
+在循环等情况下，海象操作符的表达式可能会被多次计算。
 ```pluto showLineNumbers
 local function get()
 	return true
 end
 
 while a := get() do
-	--> This will loop forever. It'll keep evaluating `a := get()`, just like any other condition.
+	--> 这将永远循环下去。它将一直计算 `a := get()`，就像任何其他条件一样。
 end
 ```
 
-Like any other expression, you can also do things like this:
+像任何其他表达式一样，您也可以执行类似这样的操作：
 ```pluto showLineNumbers
 if (a := math.random(1, 10)) < 5 then
-	print("A is less than five! Value: " .. a)
+	print("A 小于5！ 值: " .. a)
 else
-	print("A is greater than five! Value: " .. a)
+	print("A 大于5！ 值: " .. a)
 end
 ```
 
-- The Walrus operator can be used anywhere an expression is accepted.
-- The Walrus operator does not support tuple assignment.
+- 海象操作符可以在任何接受表达式的地方使用。
+- 海象操作符不支持元组赋值。
 
-This feature is inspired from Python's implementation, which can be found [here](https://docs.python.org/3/whatsnew/3.8.html#assignment-expressions).
+这个特性受到了 Python 实现的启发，可以在 [这里](https://docs.python.org/3/whatsnew/3.8.html#assignment-expressions) 找到。
