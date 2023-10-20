@@ -1,6 +1,6 @@
 ---
 sidebar_position: 13
-title: 在表达式中
+title: In 表达式
 ---
 在字符串中搜索子字符串或在数组中搜索元素现在变得非常简单。`in` 操作符已经扩展以支持这些操作。
 ```pluto showLineNumbers title="搜索子字符串。"

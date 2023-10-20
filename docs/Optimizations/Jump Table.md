@@ -1,3 +1,7 @@
-Lua implemented a jump table, but it is only compatible with clang and gcc. Pluto has an additional jump table implementation for other compilers; however, it is not enabled by default as it can add minutes to compile time, depending on the setup. In some instances, it can increase overall virtual machine performance by ~5%.
+---
+title: 跳转表
+---
 
-If you would like to try it, define `PLUTO_FORCE_JUMPTABLE` in `luaconf.h` or your build config.
+Lua 实现了一个跳转表，但只兼容 clang 和 gcc 编译器。Pluto 为其他编译器提供了额外的跳转表实现，不过默认情况下未启用，因为它可能会增加编译时间，具体取决于编译环境的设置。在某些情况下，它可以提高虚拟机的整体性能约 5%。
+
+如果您想尝试它，请在 `luaconf.h` 或您的构建配置中定义 `PLUTO_FORCE_JUMPTABLE`。

@@ -1,10 +1,14 @@
-Special arithmetic algorithms are optimized by Pluto during compile-time.
+---
+title: 特殊计算
+---
 
-For example:
+Pluto 会在编译时对特殊算术算法进行优化。
+
+例如
 - `x << 1` => `x + x`
 - `x ** 2` => `x * x`
 - `x // 2` => `x >> 1`
 
-These can offer upwards of a 20% performance boost.
+这些表达式最多可提升 20% 的性能。
 
-These expressions are only optimized when both operands are integers, and no metamethod will be called.
+这些表达式仅在两个操作数都是整数且不涉及元方法调用时才会被优化。

@@ -1,1 +1,5 @@
-Pluto will cache the length of a table when you request it for the first time. This cache is refreshed whenever you make an edit to the table. It's still advisable to localize this value though, since looking through the cache and the virtual machine is expensive compared to looking up a local.
+---
+title: 表长度
+---
+
+Pluto 会在您首次请求时缓存表的长度。每次对表进行编辑时，都会刷新缓存。不过还是建议将该值本地化，因为与查找本地值相比，在缓存和虚拟机中查找该值的成本较高。

@@ -1,5 +1,9 @@
-Although Lua presents the option to use long jumps even when compiling as C++, it doesn't default to doing so, instead requiring you to define `LUA_USE_LONGJMP`.
+---
+title: 长跳转
+---
 
-Pluto, which is exclusively compiled as C++, defaults to using long jumps as they're faster than C++ exceptions and means Lua errors won't complicate your exception handling. However, you may still define `PLUTO_USE_THROW` in `luaconf.h` or your build config to fall back to using C++ exceptions.
+尽管 Lua 提供了在以 C++ 编译时使用长跳转的选项，但默认情况下不使用，而是需要您定义 `LUA_USE_LONGJMP`。
 
-`LUAI_THROW` and `LUAI_TRY` can still be modified and will take precedence.
+Pluto 只用 C++ 编译，默认使用长跳转，因为它比 C++ 异常更快，同时意味着 Lua 错误不会复杂化您的异常处理。不过，您仍然可以在 `luaconf.h` 或构建配置中定义 `PLUTO_USE_THROW`，以回退到使用 C++ 异常。
+
+`LUAI_THROW` 和 `LUAI_TRY` 仍然可以修改，并且会优先生效。
