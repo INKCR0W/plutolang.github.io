@@ -1,7 +1,11 @@
-The messages for syntax errors are enhanced. They include tailored messages and code snippets, which should help newer programmers identify problems quicker. It's not a game changer, but it's neat.
+---
+title: 语法错误
+---
 
-### Example 1
-```pluto showLineNumbers title="Problematic Code"
+语法错误信息得到增强。它们包括量身定制的信息和代码片段，可以帮助新手程序员更快地发现问题。虽然这并不能改变游戏规则，但却很实用。
+
+### 示例 1
+```pluto showLineNumbers title="有问题的代码"
 if a < b and t == 5 return "Gottem" end
 ```
 ```diff title="Emitted Syntax Error"
@@ -9,8 +13,8 @@ syntax error: file.pluto:1: expected 'then' to delimit condition.
     1 | if a < b and t == 5 return "Gottem" end
       | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ here: expected 'then' symbol.
 ```
-### Example 2
-```pluto showLineNumbers title="Problematic Code"
+### 示例 2
+```pluto showLineNumbers title="有问题的代码"
 local fn = |a, b, c| => (a == b and a < c)
 ```
 ```diff title="Emitted Syntax Error"
@@ -18,9 +22,9 @@ syntax error: file.pluto:1: impromper lambda definition
     1 | local fn = |a, b, c| => (a == b and a < c)
       | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ here: expected '->' arrow syntax for lambda expression.
 ```
-## ANSI Coloring
-These errors support coloring, but it's disabled by default. Define the `PLUTO_USE_COLORED_OUTPUT` macro in `luaconf.h` or your build config to enable colored error messages.
+## ANSI 颜色
+这些错误支持着色，但默认情况下是禁用的。请在 `luaconf.h` 或联编配置中定义 `PLUTO_USE_COLORED_OUTPUT` 宏以启用彩色错误信息。
 :::tip
-For Windows users, you can enable ANSI coloring support with the following command:
+对于 Windows 用户，可以使用以下命令启用 ANSI 着色支持：
   - `REG ADD HKCU\CONSOLE /f /v VirtualTerminalLevel /t REG_DWORD /d 1`
 :::

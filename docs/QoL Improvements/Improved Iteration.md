@@ -1,23 +1,27 @@
-Pluto improves iteration in a few ways.
+---
+title: 改进的迭代
+---
 
-## Generalized Iteration
+Pluto 在几个方面改进了迭代。
 
-It's redundant to call the `pairs` function for simple iteration. This action is now optional, and handled by the virtual machine if the function is absent.
-```pluto showLineNumbers title="New Code"
+## 广义迭代
+
+调用 `pairs` 函数进行简单迭代是多余的。现在这一操作是可选的，如果没有该函数，则由虚拟机处理。
+```pluto showLineNumbers title="新代码"
 local t = { 1, 2, 3, "hello", "world" }
 for key, value in t do
     print(key, value)
 end
 ```
-When you omit the function from the loop preparation, `pairs` is implicitly inserted. So, that code is identical to this:
-```pluto showLineNumbers title="Old Code"
+从循环准备中省略该函数时，会隐式插入 `pairs`。因此，该代码与此代码完全相同：
+```pluto showLineNumbers title="老代码"
 local t = { 1, 2, 3, "hello", "world" }
 for key, value in pairs(t) do
     print(key, value)
 end
 ```
-This is compatible with for-loop optimizations.
+这与 for 循环的优化兼容。
 
 :::caution
-The bytecode of this feature is not backwards-compatible with Lua.
+这个功能的字节码与 Lua 不向后兼容。
 :::

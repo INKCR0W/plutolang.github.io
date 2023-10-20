@@ -1,3 +1,7 @@
-Pluto removes the locals limit, allowing you to use compile-time constants, including enums, as much as you want.
+---
+title: 删除了局部变量限制
+---
 
-Note that you are still limited to 255 registers, so you can't have infinite dynamic variables per functions.
+Pluto 取消了 locals 限制，允许你随意使用编译时常量（包括枚举）。
+
+需要注意的是，寄存器的数量仍限制在 255 个以内，因此每个函数不能拥有无限的动态变量。

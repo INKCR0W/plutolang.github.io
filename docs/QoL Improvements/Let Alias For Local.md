@@ -1,18 +1,20 @@
-You can optionally use 'let' instead of 'local' when declaring scoped variables.
+---
+title: let 别名用于 local
+---
 
-To enable the `let` keyword, simply do:
+在声明作用域变量时，您可以选择使用 'let' 代替 'local'。
+
+要启用 'let' 关键字，只需执行：
 ```pluto
 pluto_use let
 ```
 
-The usage is exactly the same as the `local` keyword.
-
-However, note that this will make `let` a reserved keyword, so you can't name any variables as such.
-If this is causing ambiguities in your script, you can disable it again after you're done with it:
+用法与 `local` 关键字完全相同。不过要注意，这会使 `let` 成为保留关键字，因此你不能用它来命名任何变量。
+如果这会在脚本中造成歧义，可以在完成脚本后再次禁用它：
 ```pluto
 pluto_use let = false
 ```
 
-## For integrators
+## 对于集成开发者
 
-You can enable `let` in your Pluto environment by default by defining the `PLUTO_USE_LET` macro in `luaconf.h` or your build config.
+通过在 `luaconf.h` 或编译配置中定义 `PLUTO_USE_LET` 宏，可以在 Pluto 环境中默认启用 `let` 宏。
