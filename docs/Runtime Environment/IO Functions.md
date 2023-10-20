@@ -1,14 +1,15 @@
 ---
 sidebar_position: 1
+title: IO 函数
 ---
-New functions for the `io` library, implemented by Pluto.
+由 Pluto 实现的 `io` 库的新函数。
 ### io.isdir
-#### Parameters
-1. A string path or file stream.
-#### Returns
+#### 参数
+1. 一个路径字符串或者文件流。
+#### 返回
 A boolean indicating if the path led toward a directory.
-#### Example
-```pluto showLineNumbers title="Example Usage"
+#### 示例
+```pluto showLineNumbers title="使用示例"
 local path = "./dir/main/"
 local bool = io.isdir(path)
 if bool then
@@ -18,12 +19,12 @@ else
 end
 ```
 ### io.isfile
-#### Parameters
-1. A string path or file stream.
-#### Returns
-A boolean indicating if the path led towards a file.
-#### Example
-```pluto showLineNumbers title="Example Usage"
+#### 参数
+1. 一个路径字符串或者文件流。
+#### 返回
+布尔值，表示路径是否指向文件。
+#### 示例
+```pluto showLineNumbers title="使用示例"
 local path = "./isfile/file"
 local bool = io.isdir(path)
 if bool then
@@ -33,25 +34,25 @@ else
 end
 ```
 ### io.listdir
-List all the files within a directory.
-#### Parameters
-1. A string path to the directory.
-2. A boolean indicating whether or not to recurse sub-directories.
-#### Returns
-A table mapping indices to file paths.
-#### Example
-```pluto showLineNumbers title="Example Usage"
+列出一个目录中的所有文件。
+#### 参数
+1. 目录的路径字符串。
+2. 一个布尔值，表示是否对子目录进行递归。
+#### 返回
+一个将索引映射到文件路径的表。
+#### 示例
+```pluto showLineNumbers title="使用示例"
 for _, filepath in io.listdir(".") do
     print(filepath)
 end
 ```
 ### io.exists
-#### Parameters
-1. A string path or file stream.
-#### Returns
-A boolean indicating if the path led towards an existing file or directory.
-#### Example
-```pluto showLineNumbers title="Example Usage"
+#### 参数
+1. 一个路径字符串或者文件流。
+#### 返回
+布尔值，表示路径是否指向现有文件或目录。
+#### 示例
+```pluto showLineNumbers title="使用示例"
 if io.exists("cfg/config.txt") then
     print("Config exists!")
 else
@@ -59,14 +60,14 @@ else
 end
 ```
 ### io.copyto
-Copy a file to another file, creating a new file if needed.
-#### Parameters
-1. A string path or file stream.
-2. A path towards the file to copy into.
-#### Returns
-A boolean indicating if the file was successfully copied.
-#### Example
-```pluto showLineNumbers title="Example Usage"
+将一个文件复制到另一个文件，必要时创建一个新文件。
+#### 参数
+1. 一个路径字符串或者文件流。
+2. 要复制到的文件的路径。
+#### 返回
+布尔值，表示文件是否复制成功。
+#### 示例
+```pluto showLineNumbers title="使用示例"
 if io.copyto("./cfg/config.txt", "./backup_cfg/config.txt") then
     print("Successfully created a backup config!")
 else
@@ -74,31 +75,31 @@ else
 end
 ```
 :::info
-As of 0.3.2, this may throw an exception on failure.
+从 0.3.2 起，失败时可能会抛出异常。
 :::
 ### io.filesize
-Fetch the size of a file in kilobytes.
-#### Parameters
-1. A string path or file stream.
-#### Returns
-A double.
-#### Example
-```pluto showLineNumbers title="Example Usage"
+以 kb 为单位获取文件大小。
+#### 参数
+1. 一个路径字符串或者文件流。
+#### 返回
+一个浮点数
+#### 示例
+```pluto showLineNumbers title="使用示例"
 if io.filesize("cfg/config.txt") < 1.0 then
     print("Config is too small or empty.")
 end
 ```
 :::info
-As of 0.3.2, this may throw an exception on failure.
+从 0.3.2 起，失败时可能会抛出异常。
 :::
 ### io.makedir
-Create a directory.
-#### Parameters
-1. The path for the new directory.
-#### Returns
-A boolean indicating if the directory was successfully created.
-#### Example
-```pluto showLineNumbers title="Example Usage"
+创建一个目录
+#### 参数
+1. 新目录的路径字符串。
+#### 返回
+布尔值，表示目录是否创建成功。
+#### 示例
+```pluto showLineNumbers title="使用示例"
 if io.makedir("./cfg") then
     print("Created cfg directory.")
 else
@@ -106,21 +107,21 @@ else
 end
 ```
 ### io.makedirs
-Creates a directory and all the non-existing parent directories in the given path.
-#### Parameters
-1. The string path for your new directory.
-#### Example
-```pluto showLineNumbers title="Example Usage"
+在给定路径下创建一个目录和所有不存在的父目录。
+#### 参数
+1. 新目录的路径字符串。
+#### 示例
+```pluto showLineNumbers title="使用示例"
 io.makedirs("A/B/C") --> Creates "C:\Users\Username\Desktop\Project\A\B\C"
 ```
 ### io.absolute
-Convert a relative path into an absolute one.
-#### Parameters
-1. A string path or file stream.
-#### Returns
-A string representing the new file path.
-#### Example
-```pluto showLineNumbers title="Example Usage"
+将相对路径转换为绝对路径。
+#### 参数
+1. 一个路径字符串或者文件流。
+#### 返回
+表示文件路径的字符串。
+#### 示例
+```pluto showLineNumbers title="使用示例"
 --> cfg/config.txt
 io.absolute("cfg/cfg.txt") --> "C:\Users\Username\Desktop\Project\cfg\cfg.txt"
 ```

@@ -1,17 +1,18 @@
 ---
 sidebar_position: 4
+title: 字符串函数
 ---
-New functions for the `string` type, implemented by Pluto.
-## New Functions
+字符串类型的新函数，由 Pluto 实现。
+## 新函数
 ### string.split
-Splits a string by a separator.
-#### Parameters
-1. The string to split.
-2. The separator to split a string by. This can be any string.
-#### Returns
-A table.
-#### Example
-```pluto title="Splitting a string by a single character."
+按分隔符分割字符串。
+#### 参数
+1. 需要分割的字符串。
+2. 分割字符串的分隔符。可以是任何字符串。
+#### 返回值
+一个表
+#### 示例
+```pluto title="用单个字符分割字符串。"
 local s = "hello world, how is everyone doing?"
 local r = string.split(s, " ")
 --[[
@@ -26,7 +27,7 @@ local r = string.split(s, " ")
     }
 --]]
 ```
-```pluto title="Splitting a string by a substring."
+```pluto title="用子串分割字符串。"
 local s = "helloHALLOWORLDworld,HALLOWORLDhowHALLOWORLDisHALLOWORLDeveryoneHALLOWORLDdoing?"
 local r = string.split(s, "HALLOWORLD")
 --[[
@@ -42,179 +43,179 @@ local r = string.split(s, "HALLOWORLD")
 --]]
 ```
 ### string.lfind
-Returns the index of where a substring starts. Begins searching at the left side of the string.
-#### Parameters
-1. The string to search.
-2. The substring to search for.
-#### Returns
-An integer for the index of the substring, or `nil` if the substring was not found.
-#### Example
-```pluto title="Basic Usage"
+返回子字符串起始位置的索引。从字符串的左侧开始搜索。
+#### 参数
+1. 要搜索的原字符串。
+2. 要搜索的子字符串。
+#### 返回值
+表示子串索引的整数，如果未找到子串，则返回 `nil`。
+#### 示例
+```pluto title="基础使用"
 local s = "hello world"
 local r = string.lfind(s, "world") --> 7
 ```
 ### string.rfind
-Returns the index of where a substring starts. Begins searching at the right side of the string.
-#### Parameters
-1. The string to search.
-2. The substring to search for.
-#### Returns
-An integer for the index of the substring, or `nil` if the substring was not found.
-#### Example
-```pluto title="Basic Usage"
+返回子字符串开始位置的索引。从字符串的右侧开始搜索。
+#### 参数
+1. 要搜索的原字符串。
+2. 要搜索的子字符串。
+#### 返回值
+表示子串索引的整数，如果未找到子串，则返回 `nil`。
+#### 示例
+```pluto title="基础使用"
 local s = "hello world"
 local r = string.rfind(s, "world") --> 7
 ```
 ### string.strip
-Strips characters from both ends of a string.
-#### Parameters
-1. The string to strip.
-2. A string of characters to strip.
-#### Returns
-The new string.
-#### Example
-```pluto title="Basic Usage"
+删除字符串两端的字符。
+#### 参数
+1. 原字符串。
+2. 要删除的字符串
+#### 返回值
+删除后的字符串。
+#### 示例
+```pluto title="基础使用"
 local s = "{}|hello world{|}"
 local r = string.strip(s, "{}|") --> "hello world"
 ```
 ### string.lstrip
-Strips characters from the left side of a string.
-#### Parameters
-1. The string to strip.
-2. A string of characters to strip.
-#### Returns
-The new string.
-#### Example
-```pluto title="Basic Usage"
+删除字符串左侧的字符。
+#### 参数
+1. 原字符串。
+2. 要删除的字符串
+#### 返回值
+删除后的字符串。
+#### 示例
+```pluto title="基础使用"
 local s = "<{}|hello world>{|}"
 local r = string.strip(s, "{}|") --> "<hello world>{|}"
 ```
 ### string.rstrip
-Strips characters from the right side of a string.
-#### Parameters
-1. The string to strip.
-2. A string of characters to strip.
-#### Returns
-The new string.
-#### Example
-```pluto title="Basic Usage"
+删除字符串右侧的字符。
+#### 参数
+1. 原字符串。
+2. 要删除的字符串
+#### 返回值
+删除后的字符串。
+#### 示例
+```pluto title="基础使用"
 local s = "<{}|hello world>{|}"
 local r = string.strip(s, "{}|") --> "<{}|<hello world>"
 ```
 ### string.isascii
-Checks if a string is entirely composed of ASCII characters.
-#### Parameters
-1. The string to check.
-#### Returns
-A Boolean.
-#### Example
-```pluto title="Basic Usage"
+检查字符串是否完全由 ASCII 字符组成。
+#### 参数
+1. 要检查的字符串。
+#### 返回值
+一个布尔值。
+#### 示例
+```pluto title="基础使用"
 local s = "HELLOWORLD123"
 local r = string.isascii(s) --> true
 ```
 :::info
-This would exclude any multi-byte characters, like emojis.
+这将排除任何多字节字符，如表情符号。
 :::
 ### string.islower
-Checks if a string is entirely composed of lowercase characters.
-#### Parameters
-1. The string to check.
-#### Returns
-A Boolean.
-#### Example
-```pluto title="Basic Usage"
+检查字符串是否全部由小写字母组成。
+#### 参数
+1. 要检查的字符串。
+#### 返回值
+一个布尔值。
+#### 示例
+```pluto title="基础使用"
 local s = "helloworld"
 local r = string.islower(s) --> true
 ```
 :::info
-Whitespace characters are not lowercase characters.
+空格字符不是小写字符。
 :::
 ### string.isalpha
-Checks if a string is entirely composed of alphabetic characters.
-#### Parameters
-1. The string to check.
-#### Returns
-A Boolean.
-#### Example
-```pluto title="Basic Usage"
+检查字符串是否完全由字母字符组成。
+#### 参数
+1. 要检查的字符串。
+#### 返回值
+一个布尔值。
+#### 示例
+```pluto title="基础使用"
 local s = "HELLOWORLD"
 local r = string.isalpha(s) --> true
 ```
 :::info
-Whitespace characters are not alphabetic characters.
+空格字符不是字母字符。
 :::
 ### string.isupper
-Checks if a string is entirely composed of uppercase characters.
-#### Parameters
-1. The string to check.
-#### Returns
-A Boolean.
-#### Example
-```pluto title="Basic Usage"
+检查字符串是否全部由大写字母组成。
+#### 参数
+1. 要检查的字符串。
+#### 返回值
+一个布尔值。
+#### 示例
+```pluto title="基础使用"
 local s = "HELLOWORLD"
 local r = string.isupper(s) --> true
 ```
 :::info
-Whitespace characters are not uppercase characters.
+空格字符不是大写字符。
 :::
 ### string.isalnum
-Checks if a string is entirely composed of alphanumeric characters.
-#### Parameters
-1. The string to check.
-#### Returns
-A Boolean.
-#### Example
-```pluto title="Basic Usage"
+检查一个字符串是否完全由字母数字字符组成。
+#### 参数
+1. 要检查的字符串。
+#### 返回值
+一个布尔值。
+#### 示例
+```pluto title="基础使用"
 local s = "HELLOWORLD123"
 local r = string.isalnum(s) --> true
 ```
 :::info
-Whitespace characters are not alphanumeric characters.
+空格字符不是字母数字字符。
 :::
 ### string.uformat
-Same as `string.format`, but performs the operation under the `en_US.UTF-8` locale. Ensures the same result on all systems.
+与 `string.format` 相同，但在 `en_US.UTF-8` 本地语言下执行操作。确保在所有系统上的结果相同。
 ### string.contains
-Checks if a string contains a substring.
-#### Parameters
-1. The string to check.
-2. The substring to check for.
-#### Returns
-A boolean.
-#### Example
-```pluto title="Basic Usage"
+检查字符串是否包含子串。
+#### 参数
+1. 要检查的字符串。
+2. 要检查的子字符串。
+#### 返回值
+一个布尔值。
+#### 示例
+```pluto title="基础使用"
 local s = "hello world"
 local r = string.contains(s, "worl") --> true
 ```
 ### string.casefold
-Compares two strings, agnostic of any capitalization.
-#### Parameters
-1. The first string to compare.
-2. The second string to compare.
-#### Returns
-A boolean.
-#### Example
-```pluto title="Basic Usage"
+比较两个字符串，不区分大小写。
+#### 参数
+1. 要比较的第一个字符串
+2. 要比较的第二个字符串。
+#### 返回值
+一个布尔值。
+#### 示例
+```pluto title="基础使用"
 local s1 = "hello world"
 local s2 = "heLLo WoRlD"
 local r1 = string.casefold(s1, s2) --> true
 ```
 ### string.partition
-Splits a string once, on the first occurance of a separator.
-#### Parameters
-1. The string to partition.
-2. The separator to partition the string by.
-3. A boolean specifying whether to search from the right. By default, this is false, which starts at the left.
-#### Returns
-Two strings: A substring for all the content before the first occurance of `sep`, and another substring for all the content afterwards.
-#### Example
-```pluto title="A Basic Partition"
+在第一次出现分隔符时分割字符串一次。
+#### 参数
+1. 要分割的字符串。
+2. 用于分割字符串的分隔符。
+3. 布尔值，用于指定是否从右侧开始搜索。默认为 false，即从左边开始搜索。
+#### 返回值
+两个字符串： 一个子串表示第一次出现 `sep` 之前的所有内容，另一个子串表示之后的所有内容。
+#### 示例
+```pluto title="一个基本的分割"
 local s = "hello world, what's up?"
 local before, after = string.partition(s, " ")
 
 assert(before == "hello")
 assert(after == "world, what's up?")
 ```
-```pluto title="Partioning From The Right"
+```pluto title="从右侧开始分割"
 local s = "hello world, what's up?"
 local before, after = string.partition(s, " ", true)
 
@@ -222,105 +223,105 @@ assert(before == "hello world, what's")
 assert(after == "up?")
 ```
 ### string.endswith
-Checks if a string ends with a suffix.
-#### Parameters
-1. The string to check.
-2. The substring suffix to check for.
-#### Returns
-A boolean.
-#### Example
-```pluto title="Basic Usage"
+检查字符串是否以后缀结尾。
+#### 参数
+1. 要检查的字符串。
+2. 要检查的后缀子串。
+#### 返回值
+一个布尔值。
+#### 示例
+```pluto title="基础使用"
 local s = "hello world"
 local r = string.endswith(s, "world") --> true
 ```
 ### string.startswith
-Checks if a string starts with a prefix.
-#### Parameters
-1. The string to check.
-2. The substring prefix to check for.
-#### Returns
-A boolean.
-#### Example
-```pluto title="Basic Usage"
+检查字符串是否以前缀开头。
+#### 参数
+1. 要检查的字符串。
+2. 要检查的前缀子串。
+#### 返回值
+一个布尔值。
+#### 示例
+```pluto title="基础使用"
 local s = "hello world"
 local r = string.startswith(s, "hello") --> true
 ```
 ### string.find_last_of
-Searches the string for the last character that matches any of the characters specified in its arguments.
-#### Parameters
-1. The string to search.
-2. A string of characters to match.
-#### Returns
-An integer, or `nil` if nothing is matched.
-#### Example
-```pluto title="Basic Usage"
--- This will find the last occurance of any listed characters.
+搜索字符串中与参数中指定的任何字符匹配的最后一个字符。
+#### 参数
+1. 要搜索的原字符串。
+2. 一串要匹配的字符。
+#### 返回值
+整数，如果没有匹配到，则为 "nil"。
+#### 示例
+```pluto title="基础使用"
+-- 这将查找任何列出字符的最后一次出现。
 local s = "he$$o ?$! world$"
 local r = string.find_last_of(s, "!$") --> 16
 ```
 ### string.find_first_of
-Searches the string for the first character that matches any of the characters specified in its arguments.
-#### Parameters
-1. The string to search.
-2. A string of characters to match.
-#### Returns
-An integer, or `nil` if nothing is matched.
-#### Example
-```pluto title="Basic Usage"
--- This will find the first occurance of any listed characters.
+搜索字符串中与其参数中指定的任何字符相匹配的第一个字符。
+#### 参数
+1. 要搜索的原字符串。
+2. 一串要匹配的字符。
+#### 返回值
+整数，如果没有匹配到，则为 "nil"。
+#### 示例
+```pluto title="基础使用"
+-- 这将查找任何列出字符的首次出现。
 local s = "he$$o ?$! world$"
 local r = string.find_first_of(s, "!$") --> 3
 ```
 ### string.iswhitespace
-Checks if this string is entirely composed of whitespace characters.
+检查该字符串是否完全由空白字符组成。
 #### Paramaters
-1. The string to check.
-#### Returns
-A boolean.
-#### Example
-```pluto title="Basic Usage"
+1. 要检查的字符串。
+#### 返回值
+一个布尔值。
+#### 示例
+```pluto title="基础使用"
 local s = "    \t \v \f     \t\t\t\t"
 local r = string.iswhitespace(s) --> true
 ```
 ### string.find_last_not_of
-Searches the string for the last character that does not match any of the characters specified in its arguments.
-#### Parameters
-1. The string to search.
-2. A string of characters to match.
-#### Returns
-An integer, or `nil` if nothing is matched.
-#### Example
-```pluto title="Basic Usage"
--- This will find the last non-occurance of any listed characters.
+搜索字符串中与参数中指定的字符不匹配的最后一个字符。
+#### 参数
+1. 要搜索的原字符串。
+2. 一串要匹配的字符。
+#### 返回值
+整数，如果没有匹配到，则为 "nil"。
+#### 示例
+```pluto title="基础使用"
+-- 这将查找任何列出字符中最后一次未出现的字符。
 local s = "he$$o ?$! world$"
 local r = string.find_last_not_of(s, "!$") --> 15
 ```
 ### string.find_first_not_of
-Searches the string for the first character that does not match any of the characters specified in its arguments.
-#### Parameters
-1. The string to search.
-2. A string of characters to match.
-#### Returns
-An integer, or `nil` if nothing is matched.
-#### Example
-```pluto title="Basic Usage"
--- This will find the first non-occurance of any listed characters.
+搜索字符串中与参数中指定的字符不匹配的第一个字符。
+#### 参数
+1. 要搜索的原字符串。
+2. 一串要匹配的字符。
+#### 返回值
+整数，如果没有匹配到，则为 "nil"。
+#### 示例
+```pluto title="基础使用"
+-- 这将查找任何列出字符中第一个未出现的字符。
 local s = "he$$o ?$! world$"
 local r = string.find_first_not_of(s, "!$") --> 1
 ```
 
-## Modified Functions
+## 修改过的功能
 ### string.upper
-This function now takes a second parameter that specifies which index to capitalize.
-#### Example
-```pluto showLineNumbers title="Basic Usage"
+此函数现在接受第二个参数，用于指定将哪个索引变为大写。
+#### 示例
+```pluto showLineNumbers title="基础使用"
 local s = "hello"
 assert(s:upper(1) == "Hello")
 ```
 ### string.lower
-This function now takes a second parameter that specifies which index to make lowercase.
-#### Example
-```pluto showLineNumbers title="Basic Usage"
+此函数现在接受第二个参数，用于指定将哪个索引变为小写。
+#### 示例
+```pluto showLineNumbers title="基础使用"
 local s = "HELLO"
 assert(s:lower(1) == "hELLO")
 ```

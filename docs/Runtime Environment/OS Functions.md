@@ -1,28 +1,29 @@
 ---
 sidebar_position: 2
+title: OS 函数
 ---
-New functions for the `os` library, implemented by Pluto.
+由 Pluto 实现的 `os` 库的新函数。
 ### os.sleep
-#### Parameters:
-1. The amount of milliseconds to sleep for.
-#### Example
-```pluto showLineNumbers title="Basic Usage"
-os.sleep(1000) --> Pause this thread for 1000ms.
+#### 参数:
+1. 要睡眠的毫秒数。
+#### 示例
+```pluto showLineNumbers title="基本使用"
+os.sleep(1000) --> 暂停这个线程 1000 毫秒。
 ```
 ### os.millis
-Returns milliseconds since epoch.
+返回自纪元以来的毫秒数。
 :::info
-The return of this function is implementation-specific.
+该函数的返回值取决于具体实现。
 :::
 ### os.nanos
-Returns nanoseconds since epoch.
+返回自纪元以来的纳秒数。
 :::info
-The return of this function is implementation-specific.
+该函数的返回值取决于具体实现。
 :::
 ### os.seconds
-Returns seconds since epoch.
+返回自纪元以来的秒数。
 :::info
-The return of this function is implementation-specific.
+该函数的返回值取决于具体实现。
 :::
 ### os.unixseconds
-Returns seconds since UNIX epoch.
+返回自 UNIX 纪元以来的秒数。

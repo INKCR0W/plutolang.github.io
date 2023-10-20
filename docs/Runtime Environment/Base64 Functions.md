@@ -1,12 +1,16 @@
+---
+title: Base64 函数
+---
+
 :::info
-Only available if you compiled Pluto with Soup. Must be included via `require`.
+仅在使用 Soup 编译 Pluto 时可用。必须通过 `require` 包含。
 :::
 ## base64
 ### base64.encode(data, pad)
-Returns a base64-encoded string.
-#### Parameters:
-1. `data` — A string of data to encode.
-2. `pad` — A boolean indicating whether or not to apply padding to the encoded result.
+返回编码后的 base64 字符串。
+#### 参数：
+1. `data` — 要编码的字符串数据。
+2. `pad` — 表示是否对编码结果应用填充的布尔值。
 ```pluto
 local base64 = require("base64")
 local data, encoded
@@ -18,9 +22,9 @@ encoded = base64.encode(data, true)
 --]]
 ```
 ### base64.decode(data)
-Returns a decoded base64 string.
-#### Parameters:
-1. `data` — A string of base64 data.
+返回已解码的 base64 字符串。
+#### 参数：
+1. `data` — 一个 base64 数据字符串。
 ```pluto
 local base64 = require("base64")
 
@@ -30,6 +34,6 @@ base64.decode("SGVsbG8sIFdvcmxkIQ==")
 --]]
 ```
 ### base64.url_encode(data, pad)
-Returns a base64url-encoded string. This variant is sometimes refered to as filename safe base64.
+返回一个 base64url 编码的字符串。有时这种变体也被称为文件名安全的base64。
 ### base64.url_decode(data)
-Similar to `base64.decode` except for base64url.
+与 `base64.decode` 类似，只不过是用于 base64url 解码。

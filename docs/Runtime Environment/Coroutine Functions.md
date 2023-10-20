@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
+title: 协程函数
 ---
-New functions for the `coroutine` library, implemented by Pluto.
+由Pluto实现的 `coroutine` 库的新函数。
 ### coroutine.xresume
-An alternative to coroutine.resume that rethrows any errors thrown by the coroutine.
+`coroutine.resume` 的替代方法，它会重新抛出协程引发的任何错误。

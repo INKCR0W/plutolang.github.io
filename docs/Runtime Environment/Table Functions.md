@@ -1,40 +1,41 @@
 ---
 sidebar_position: 3
+title: 表函数
 ---
-New functions for the `table` type, implemented by Pluto.
+`table` 类型的新函数，由 Pluto 实现。
 ### table.freeze
-Freezes a table to prevent modification.
-#### Parameters
-1. The table to freeze
-#### Returns
-The original table, but frozen.
-#### Example
-```pluto title="Basic Usage"
+冻结表以防止修改。
+#### 参数
+1. 要冻结的表。
+#### 返回值
+原来的表，但被冻结了。
+#### 示例
+```pluto title="基础使用"
 local t = table.freeze({...})
--- `table.freeze(t)` on another line will work fine too.
+-- 在其它地方使用 `table.freeze(t)` 也可以。
 t.key = "value" -- Fails.
 ```
 ### table.isfrozen
-Checks if this table is frozen.
-#### Parameters
-1. The table to check.
-#### Returns
-A boolean.
-#### Example
-```pluto title="Basic Usage"
+检查该表是否冻结。
+#### 参数
+1. 要检查的表。
+#### 返回值
+一个布尔值
+#### 示例
+```pluto title="基础使用"
 local t = {}
 table.freeze(t)
 assert(table.isfrozen(t) == true)
 ```
 ### table.contains
-Checks if this table contains an element.
-#### Parameters
-1. The table to check.
-2. The element to check for.
-#### Returns
-The index or key if found, otherwise `nil`.
-#### Example
-```pluto title="Basic Usage"
+检查该表是否包含元素。
+#### 参数
+1. 要检查的表。
+2. 要检查的元素。
+#### 返回值
+索引或键（如果找到），否则为 "nil"。
+#### 示例
+```pluto title="基础使用"
 local t = { 1, 2, 3, 4, 5, 6, key = "value" }
 assert(table.contains(t, 4) == 4)
 assert(table.contains(t, "value") == "key")

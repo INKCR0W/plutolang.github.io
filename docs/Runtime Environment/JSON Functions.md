@@ -1,12 +1,16 @@
+---
+title: JSON 函数
+---
+
 :::info
-Only available if you compiled Pluto with Soup. Must be included via `require`.
+仅在使用 Soup 编译 Pluto 时可用。必须通过 `require` 包含。
 :::
 ## json
 ### json.encode(data, pretty)
-Returns a string of JSON.
+返回一个 JSON 字符串。
 #### Parameters:
-1. `data` — A boolean, number, string, or table to encode as JSON.
-2. `pretty` — Whether to return a human-readable string of JSON.
+1. `data` — 要编码为 JSON 的布尔值、数字、字符串或表。
+2. `pretty` — 是否返回人类可读的 JSON 字符串。
 ```pluto
 local json = require("json")
 local data, encoded
@@ -35,14 +39,14 @@ encoded = json.encode(data, true)
 --]]
 ```
 ### json.decode(data)
-Returns multiple potential types. If you pass a serialized boolean, number, or string, then it will return the same type. If you pass a complex JSON object, it will return a table.
+返回多个可能的类型。如果传递了序列化的布尔值、数字或字符串，则它将返回相同类型。如果传递了复杂的 JSON 对象，它将返回一个表。
 #### Parameters:
-1. `data` — The JSON data to decode.
+1. `data` — 要解码的 JSON 数据。
 ```pluto
 local json = require("json")
 local data, encoded, decoded
 
--- Basic Type
+-- 基本类型
 
 data = "Hello, World!"
 encoded = json.encode(data, true)
@@ -51,7 +55,7 @@ decoded = json.decode(encoded)
 assert(decoded == data)
 assert(type(decoded) == "string")
 
--- Complex Type
+-- 复杂类型
 
 data = {
     key = "Hello",
